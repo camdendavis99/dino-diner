@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using Xunit;
 using DinoDiner.Menu.Entrees;
 
-namespace MenuTest.Entrees
+namespace DinoDiner.MenuTest.Entrees
 {
     public class PrehistoricPBJUnitTest
     {

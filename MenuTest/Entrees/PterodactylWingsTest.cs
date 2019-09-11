@@ -2,7 +2,7 @@
 using Xunit;
 using DinoDiner.Menu.Entrees;
 
-namespace MenuTest.Entrees
+namespace DinoDiner.MenuTest.Entrees
 {
     public class PterodactylWingsUnitTest
     {
@@ -29,6 +29,5 @@ namespace MenuTest.Entrees
             Assert.Contains<string>("Wing Sauce", ingredients);
             Assert.Equal<int>(2, ingredients.Count);
         }
-
     }
 }
