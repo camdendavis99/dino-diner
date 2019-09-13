@@ -22,11 +22,17 @@ namespace DinoDiner.Menu.Entrees
                     "Flour Tortilla",
                     "Chicken Breast"
                 };
-                if (dressing) ingredients.Add("Caesar Dressing");
+                if (dressing) ingredients.Add("Ceasar Dressing");
                 if (lettuce) ingredients.Add("Romaine Lettuce");
                 if (cheese) ingredients.Add("Parmesan Cheese");
-                return Ingredients;
+                return ingredients;
             }
+        }
+
+        public VelociWrap()
+        {
+            Price = 6.86;
+            Calories = 356;
         }
 
         public void HoldDressing()
