@@ -4,12 +4,12 @@ using System.Text;
 
 namespace DinoDiner.Menu.Entrees
 {
-    public class PterodactylWings
+    public class PterodactylWings : Entree
     {
-        public double Price { get; set; }
-        public uint Calories { get; set; }
-
-        public List<string> Ingredients
+        /// <summary>
+        /// Gets the list of ingredients based on which have been chosen
+        /// </summary>
+        public override List<string> Ingredients
         {
             get
             {
@@ -22,6 +22,9 @@ namespace DinoDiner.Menu.Entrees
             }
         }
 
+        /// <summary>
+        /// Creates a new PterodactylWings with default Price and Calories
+        /// </summary>
         public PterodactylWings()
         {
             Price = 7.21;

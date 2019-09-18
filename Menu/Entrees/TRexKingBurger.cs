@@ -4,20 +4,57 @@ using System.Text;
 
 namespace DinoDiner.Menu.Entrees
 {
-    public class TRexKingBurger
+    public class TRexKingBurger : Entree
     {
+        /// <summary>
+        /// Whether or not the burger will have a bun
+        /// </summary>
         private bool bun = true;
+
+        /// <summary>
+        /// Whether or not the burger will have lettuce
+        /// </summary>
         private bool lettuce = true;
+
+        /// <summary>
+        /// Whether or not the burger will have tomato
+        /// </summary>
         private bool tomato = true;
+
+        /// <summary>
+        /// Whether or not the burger will have onion
+        /// </summary>
         private bool onion = true;
+
+        /// <summary>
+        /// Whether or not the burger will have pickles
+        /// </summary>
         private bool pickle = true;
+
+        /// <summary>
+        /// Whether or not the burger will have ketchup
+        /// </summary>
         private bool ketchup = true;
+
+        /// <summary>
+        /// Whether or not the burger will have mustard
+        /// </summary>
         private bool mustard = true;
+
+        /// <summary>
+        /// Whether or not the burger will have mayo
+        /// </summary>
         private bool mayo = true;
 
+        /// <summary>
+        /// Number of patties on the burger
+        /// </summary>
         private uint pattieCount { get; set; }
 
-        public List<string> Ingredients
+        /// <summary>
+        /// Gets the list of ingredients based on which have been chosen
+        /// </summary>
+        public override List<string> Ingredients
         {
             get
             {
@@ -39,9 +76,9 @@ namespace DinoDiner.Menu.Entrees
             }
         }
 
-        public double Price { get; set; }
-        public uint Calories { get; set; }
-
+        /// <summary>
+        /// Creates a new TRexKingBurger with default patty count, Price, and Calories
+        /// </summary>
         public TRexKingBurger()
         {
             pattieCount = 3;
@@ -49,41 +86,65 @@ namespace DinoDiner.Menu.Entrees
             Calories = 728;
         }
 
+        /// <summary>
+        /// Removes bun
+        /// </summary>
         public void HoldBun()
         {
             bun = false;
         }
 
+        /// <summary>
+        /// Removes lettuce
+        /// </summary>
         public void HoldLettuce()
         {
             lettuce = false;
         }
 
+        /// <summary>
+        /// Removes tomato
+        /// </summary>
         public void HoldTomato()
         {
             tomato = false;
         }
 
+        /// <summary>
+        /// Removes onion
+        /// </summary>
         public void HoldOnion()
         {
             onion = false;
         }
 
+        /// <summary>
+        /// Removes pickles
+        /// </summary>
         public void HoldPickle()
         {
             pickle = false;
         }
 
+        /// <summary>
+        /// Removes ketchup
+        /// </summary>
         public void HoldKetchup()
         {
             ketchup = false;
         }
 
+        /// <summary>
+        /// Removes mustard
+        /// </summary>
         public void HoldMustard()
         {
             mustard = false;
         }
 
+        /// <summary>
+        /// Removes mayo
+        /// </summary>
         public void HoldMayo()
         {
             mayo = false;

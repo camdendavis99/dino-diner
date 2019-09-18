@@ -4,14 +4,17 @@ using System.Text;
 
 namespace DinoDiner.Menu.Entrees
 {
-    public class DinoNuggets
+    public class DinoNuggets : Entree
     {
+        /// <summary>
+        /// Number of nuggets in the entree
+        /// </summary>
         private uint nuggetCount = 6;
 
-        public double Price { get; set; }
-        public uint Calories { get; set; }
-
-        public List<string> Ingredients
+        /// <summary>
+        /// Gets the list of ingredients based on the number of nuggets
+        /// </summary>
+        public override List<string> Ingredients
         {
             get
             {
@@ -24,12 +27,18 @@ namespace DinoDiner.Menu.Entrees
             }
         }
 
+        /// <summary>
+        /// Creates a new DinoNuggets with default Price and Calories
+        /// </summary>
         public DinoNuggets()
         {
             this.Price = 4.25;
             this.Calories = 59 * this.nuggetCount;
         }
 
+        /// <summary>
+        /// Adds a nugget to the entree
+        /// </summary>
         public void AddNugget()
         {
             this.nuggetCount++;

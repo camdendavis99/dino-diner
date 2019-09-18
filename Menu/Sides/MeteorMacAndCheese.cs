@@ -6,25 +6,26 @@ namespace DinoDiner.Menu.Sides
 {
     public class MeteorMacAndCheese : Side
     {
+        /// <summary>
+        /// Gets or sets the size, and sets the Price or Calories accordingly
+        /// </summary>
         public override Size Size
         {
-            get => Size;
+            get => size;
             set
             {
+                size = value;
                 switch (value)
                 {
                     case Size.Small:
-                        Size = Size.Small;
                         Price = 0.99;
                         Calories = 420;
                         break;
                     case Size.Medium:
-                        Size = Size.Medium;
                         Price = 1.45;
                         Calories = 490;
                         break;
                     default:
-                        Size = Size.Large;
                         Price = 1.95;
                         Calories = 520;
                         break;
@@ -32,6 +33,9 @@ namespace DinoDiner.Menu.Sides
             }
         }
 
+        /// <summary>
+        /// Gets the list of ingredients
+        /// </summary>
         public override List<string> Ingredients
         {
             get
@@ -45,10 +49,12 @@ namespace DinoDiner.Menu.Sides
             }
         }
 
+        /// <summary>
+        /// Creates a new MeteorMacAndCheese with 
+        /// default Size, Price, and Calories
+        /// </summary>
         public MeteorMacAndCheese()
         {
-            this.Price = 0.99;
-            this.Calories = 420;
             this.Size = Size.Small;
         }
     }

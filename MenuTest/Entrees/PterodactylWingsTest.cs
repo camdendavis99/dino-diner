@@ -2,7 +2,7 @@
 using Xunit;
 using DinoDiner.Menu.Entrees;
 
-namespace DinoDiner.MenuTest.Entrees
+namespace MenuTest.Entrees
 {
     public class PterodactylWingsUnitTest
     {

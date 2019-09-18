@@ -4,16 +4,27 @@ using System.Text;
 
 namespace DinoDiner.Menu.Entrees
 {
-    public class Brontowurst
+    public class Brontowurst : Entree
     {
+        /// <summary>
+        /// Whether or not the Brontowurst will have a bun
+        /// </summary>
         private bool bun = true;
+
+        /// <summary>
+        /// Whether or not the Brontowurst will have peppers
+        /// </summary>
         private bool peppers = true;
+
+        /// <summary>
+        /// Whether or not the Brontowurst will have onion
+        /// </summary>
         private bool onion = true;
 
-        public double Price { get; set; }
-        public uint Calories { get; set; }
-
-        public List<string> Ingredients
+        /// <summary>
+        /// Gets the list of ingredients based on which have been chosen
+        /// </summary>
+        public override List<string> Ingredients
         {
             get
             {
@@ -25,22 +36,34 @@ namespace DinoDiner.Menu.Entrees
             }
         }
 
+        /// <summary>
+        /// Creates a new Brontowurst with default Price and Calories
+        /// </summary>
         public Brontowurst()
         {
             this.Price = 5.36;
             this.Calories = 498;
         }
 
+        /// <summary>
+        /// Removes bun
+        /// </summary>
         public void HoldBun()
         {
             this.bun = false;
         }
 
+        /// <summary>
+        /// Removes peppers
+        /// </summary>
         public void HoldPeppers()
         {
             this.peppers = false;
         }
 
+        /// <summary>
+        /// Removes onion
+        /// </summary>
         public void HoldOnion()
         {
             this.onion = false;
