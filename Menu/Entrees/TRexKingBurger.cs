@@ -1,4 +1,8 @@
-﻿using System;
+﻿/*  TRexKingBurger.cs
+*   Author: Camden Davis
+*/
+
+using System;
 using System.Collections.Generic;
 using System.Text;
 
