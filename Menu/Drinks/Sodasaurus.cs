@@ -66,7 +66,7 @@ namespace DinoDiner.Menu.Drinks
         }
 
         /// <summary>
-        /// Creates a new Sodasaurus with default size, price, and calories
+        /// Creates a new Sodasaurus with default Size, Price, and Calories
         /// </summary>
         public Sodasaurus() : base() { }
     }

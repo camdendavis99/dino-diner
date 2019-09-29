@@ -26,12 +26,12 @@ namespace DinoDiner.Menu.Drinks
         /// <summary>
         /// Gets and sets the price
         /// </summary>
-        public double Price { get; set; }
+        public double Price { get; protected set; }
 
         /// <summary>
         /// Gets and sets the calories
         /// </summary>
-        public uint Calories { get; set; }
+        public uint Calories { get; protected set; }
 
         /// <summary>
         /// Gets the ingredients list

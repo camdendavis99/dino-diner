@@ -12,7 +12,7 @@ namespace DinoDiner.Menu.Drinks
         private bool sweet = false;
 
         /// <summary>
-        /// Whether or not the tea has sweetener. Doubles calories if sweet.
+        /// Whether or not the tea has sweetener. Doubles Calories if sweet.
         /// </summary>
         public bool Sweet
         {
@@ -82,7 +82,7 @@ namespace DinoDiner.Menu.Drinks
         }
 
         /// <summary>
-        /// Creates a new Tyrannotea with default size, price, and calories
+        /// Creates a new Tyrannotea with default Size, Price, and Calories
         /// </summary>
         public Tyrannotea() : base() { }
 
