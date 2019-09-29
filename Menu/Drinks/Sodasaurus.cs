@@ -1,0 +1,73 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace DinoDiner.Menu.Drinks
+{
+    public enum SodasaurusFlavor
+    {
+        Cola,
+        Orange,
+        Vanilla,
+        Chocolate,
+        RootBeer,
+        Cherry,
+        Lime
+    }
+
+    public class Sodasaurus : Drink
+    {
+        /// <summary>
+        /// Gets or sets the flavor
+        /// </summary>
+        public SodasaurusFlavor Flavor { get; set; }
+
+        /// <summary>
+        /// Gets or sets the size, and sets the Price or Calories accordingly
+        /// </summary>
+        public override Size Size
+        {
+            get => size;
+            set
+            {
+                size = value;
+                switch (value)
+                {
+                    case Size.Small:
+                        Price = 1.50;
+                        Calories = 112;
+                        break;
+                    case Size.Medium:
+                        Price = 2.00;
+                        Calories = 156;
+                        break;
+                    default:
+                        Price = 2.50;
+                        Calories = 208;
+                        break;
+                }
+            }
+        }
+
+        /// <summary>
+        /// Gets the list of ingredients
+        /// </summary>
+        public override List<string> Ingredients
+        {
+            get
+            {
+                return new List<string>()
+                {
+                    "Water",
+                    "Natural Flavors",
+                    "Cane Sugar"
+                };
+            }
+        }
+
+        /// <summary>
+        /// Creates a new Sodasaurus with default size, price, and calories
+        /// </summary>
+        public Sodasaurus() : base() { }
+    }
+}
