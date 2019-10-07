@@ -73,5 +73,15 @@ namespace DinoDiner.Menu
         /// Creates a new Sodasaurus with default Size, Price, and Calories
         /// </summary>
         public Sodasaurus() : base() { }
+
+        /// <summary>
+        /// Returns a string representation for Sodasaurus, including size
+        /// and flavor.
+        /// </summary>
+        /// <returns>String representation of the drink</returns>
+        public override string ToString()
+        {
+            return $"{Size} {Flavor} Sodasaurus";
+        }
     }
 }

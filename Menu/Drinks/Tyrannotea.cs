@@ -97,5 +97,18 @@ namespace DinoDiner.Menu
         {
             Lemon = true;
         }
+
+        /// <summary>
+        /// Returns a string representation for Tyrannotea, including size
+        /// and whether or not it is sweet.
+        /// </summary>
+        /// <returns>String representation of the drink</returns>
+        public override string ToString()
+        {
+            if (Sweet)
+                return $"{Size} Sweet Tyrannotea";
+            else
+                return $"{Size} Tyrannotea";
+        }
     }
 }

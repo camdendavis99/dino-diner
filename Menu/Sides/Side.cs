@@ -15,7 +15,7 @@ namespace DinoDiner.Menu
         Large
     }
 
-    public abstract class Side
+    public abstract class Side : IMenuItem
     {
         /// <summary>
         /// Stores the size

@@ -86,5 +86,18 @@ namespace DinoDiner.Menu
         {
             Ice = true;
         }
+
+        /// <summary>
+        /// Returns a string representation for jurassic java, including size
+        /// and whether or not it is decaf.
+        /// </summary>
+        /// <returns>String representation of the drink</returns>
+        public override string ToString()
+        {
+            if (Decaf)
+                return $"{Size} Decaf Jurassic Java";
+            else
+                return $"{Size} Jurassic Java";
+        }
     }
 }
