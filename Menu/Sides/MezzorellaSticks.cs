@@ -6,7 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace DinoDiner.Menu.Sides
+namespace DinoDiner.Menu
 {
     public class MezzorellaSticks : Side
     {
@@ -60,6 +60,15 @@ namespace DinoDiner.Menu.Sides
         public MezzorellaSticks()
         {
             this.Size = Size.Small;
+        }
+
+        /// <summary>
+        /// Returns the string representation of this menu item
+        /// </summary>
+        /// <returns>String representation of menu item</returns>
+        public override string ToString()
+        {
+            return $"{Size} Mezzorella Sticks";
         }
     }
 }

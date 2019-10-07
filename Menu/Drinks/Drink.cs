@@ -6,15 +6,8 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace DinoDiner.Menu.Drinks
+namespace DinoDiner.Menu
 {
-    public enum Size
-    {
-        Small,
-        Medium,
-        Large
-    }
-
     public abstract class Drink
     {
         /// <summary>

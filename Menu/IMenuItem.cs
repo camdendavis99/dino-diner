@@ -1,4 +1,4 @@
-﻿/*  Entree.cs
+﻿/*  IMenuItem.cs
 *   Author: Camden Davis
 */
 
@@ -8,21 +8,21 @@ using System.Text;
 
 namespace DinoDiner.Menu
 {
-    public abstract class Entree
+    public interface IMenuItem
     {
         /// <summary>
         /// Gets and sets the price
         /// </summary>
-        public double Price { get; set; }
+        double Price { get; }
 
         /// <summary>
         /// Gets and sets the calories
         /// </summary>
-        public uint Calories { get; set; }
+        uint Calories { get; }
 
         /// <summary>
         /// Gets the ingredients list
         /// </summary>
-        public virtual List<string> Ingredients { get; }
+        List<string> Ingredients { get; }
     }
 }

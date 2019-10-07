@@ -6,7 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace DinoDiner.Menu.Entrees
+namespace DinoDiner.Menu
 {
     public class PterodactylWings : Entree
     {
@@ -33,6 +33,15 @@ namespace DinoDiner.Menu.Entrees
         {
             Price = 7.21;
             Calories = 318;
+        }
+
+        /// <summary>
+        /// Returns the string representation of this menu item
+        /// </summary>
+        /// <returns>String representation of menu item</returns>
+        public override string ToString()
+        {
+            return "Pterodactyl Wings";
         }
     }
 }

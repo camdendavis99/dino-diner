@@ -4,7 +4,7 @@
 
 using System.Collections.Generic;
 
-namespace DinoDiner.Menu.Entrees
+namespace DinoDiner.Menu
 {
     public class PrehistoricPBJ : Entree
     {
@@ -55,6 +55,15 @@ namespace DinoDiner.Menu.Entrees
         public void HoldJelly()
         {
             this.jelly = false;
+        }
+
+        /// <summary>
+        /// Returns the string representation of this menu item
+        /// </summary>
+        /// <returns>String representation of menu item</returns>
+        public override string ToString()
+        {
+            return "Prehistoric PB&J";
         }
     }
 }
