@@ -15,12 +15,12 @@
                 <Setter Property="Height" Value="150"></Setter>
             </Style>
         </WrapPanel.Resources>
-        <Button>Brontowurst Combo</Button>
-        <Button>Dino-Nuggets Combo</Button>
-        <Button>Steakosaurus Burger Combo</Button>
-        <Button>T-Rex King Burger Combo</Button>
-        <Button>Pterodactyl Wings Combo</Button>
-        <Button>Prehistoric PB&amp;J</Button>
-        <Button>VelociWrap Combo</Button>
+        <Button Click="EntreeSelected" Tag="Brontowurst Combo">Brontowurst Combo</Button>
+        <Button Click="EntreeSelected" Tag="Dino-Nuggets Combo">Dino-Nuggets Combo</Button>
+        <Button Click="EntreeSelected" Tag="Steakosaurus Burger Combo">Steakosaurus Burger Combo</Button>
+        <Button Click="EntreeSelected" Tag="T-Rex King Burger Combo">T-Rex King Burger Combo</Button>
+        <Button Click="EntreeSelected" Tag="Pterodactyl Wings Combo">Pterodactyl Wings Combo</Button>
+        <Button Click="EntreeSelected" Tag="Prehistoric PB&amp;J Combo">Prehistoric PB&amp;J Combo</Button>
+        <Button Click="EntreeSelected" Tag="Velociwrap Combo">VelociWrap Combo</Button>
     </WrapPanel>
 </Page>
