@@ -15,12 +15,51 @@
                 <Setter Property="Height" Value="150"></Setter>
             </Style>
         </WrapPanel.Resources>
-        <Button Click="EntreeSelected" Tag="Brontowurst Combo">Brontowurst Combo</Button>
-        <Button Click="EntreeSelected" Tag="Dino-Nuggets Combo">Dino-Nuggets Combo</Button>
-        <Button Click="EntreeSelected" Tag="Steakosaurus Burger Combo">Steakosaurus Burger Combo</Button>
-        <Button Click="EntreeSelected" Tag="T-Rex King Burger Combo">T-Rex King Burger Combo</Button>
-        <Button Click="EntreeSelected" Tag="Pterodactyl Wings Combo">Pterodactyl Wings Combo</Button>
-        <Button Click="EntreeSelected" Tag="Prehistoric PB&amp;J Combo">Prehistoric PB&amp;J Combo</Button>
-        <Button Click="EntreeSelected" Tag="Velociwrap Combo">VelociWrap Combo</Button>
+        <Button Click="EntreeSelected" Tag="Brontowurst Combo">
+            <StackPanel>
+                <TextBlock>
+                    <Run Text="Brontowurst Combo"/>
+                </TextBlock>
+                <Image Source="Assets/DinoDiner-01.png"/>
+            </StackPanel>
+        </Button>
+        <Button Click="EntreeSelected" Tag="Dino-Nuggets Combo">
+            <Button.Background>
+                <ImageBrush ImageSource="Assets/DinoDiner-02.png"></ImageBrush>
+            </Button.Background>
+            Dino-Nuggets Combo
+        </Button>
+        <Button Click="EntreeSelected" Tag="Steakosaurus Burger Combo">
+            <Button.Background>
+                <ImageBrush ImageSource="Assets/DinoDiner-05.png"></ImageBrush>
+            </Button.Background>
+            Steakosaurus Burger Combo
+        </Button>
+        <Button Click="EntreeSelected" Tag="T-Rex King Burger Combo">
+            <Button.Background>
+                <ImageBrush ImageSource="Assets/DinoDiner-06.png"></ImageBrush>
+            </Button.Background>
+            T-Rex King Burger Combo
+        </Button>
+        <Button Click="EntreeSelected" Tag="Pterodactyl Wings Combo">
+            <Button.Background>
+                <ImageBrush ImageSource="Assets/DinoDiner-04.png"></ImageBrush>
+            </Button.Background>
+            <Bold>Pterodactyl Wings Combo</Bold>
+        </Button>
+        <Button Click="EntreeSelected" Tag="Prehistoric PB&amp;J Combo">
+            <Button.Background>
+                <ImageBrush ImageSource="Assets/DinoDiner-03.png"></ImageBrush>
+            </Button.Background>
+            <Bold>Prehistoric PB&amp;J Combo</Bold>
+        </Button>
+        <Button Click="EntreeSelected" Tag="Velociwrap Combo">
+            <Button.Background>
+                <ImageBrush ImageSource="Assets/DinoDiner-07.png"></ImageBrush>
+            </Button.Background>
+            <TextBlock>
+                <Run FontWeight="Bold" FontSize="20" BaselineAlignment="Top" Text="Velociwrap Combo"></Run>
+            </TextBlock>
+        </Button>
     </WrapPanel>
 </Page>
