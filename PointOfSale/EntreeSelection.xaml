@@ -15,12 +15,47 @@
                 <Setter Property="Height" Value="150"></Setter>
             </Style>
         </WrapPanel.Resources>
-        <Button>Brontowurst</Button>
-        <Button>Dino-Nuggets</Button>
-        <Button>Steakosaurus Burger</Button>
-        <Button>T-Rex King Burger</Button>
-        <Button>Pterodactyl Wings</Button>
-        <Button>Prehistoric PB&amp;J</Button>
-        <Button>VelociWrap</Button>
+        <Button>
+            <Button.Background>
+                <ImageBrush ImageSource="Assets/DinoDiner-01.png"></ImageBrush>
+            </Button.Background>
+            Brontowurst
+        </Button>
+        <Button>
+            <Button.Background>
+                <ImageBrush ImageSource="Assets/DinoDiner-02.png"></ImageBrush>
+            </Button.Background>
+            Dino-Nuggets
+        </Button>
+        <Button>
+            <Button.Background>
+                <ImageBrush ImageSource="Assets/DinoDiner-05.png"></ImageBrush>
+            </Button.Background>
+            Steakosaurus Burger
+        </Button>
+        <Button>
+            <Button.Background>
+                <ImageBrush ImageSource="Assets/DinoDiner-06.png"></ImageBrush>
+            </Button.Background>
+            T-Rex King Burger
+        </Button>
+        <Button>
+            <Button.Background>
+                <ImageBrush ImageSource="Assets/DinoDiner-04.png"></ImageBrush>
+            </Button.Background>
+            Pterodactyl Wings
+        </Button>
+        <Button>
+            <Button.Background>
+                <ImageBrush ImageSource="Assets/DinoDiner-03.png"></ImageBrush>
+            </Button.Background>
+            Prehistoric PB&amp;J
+        </Button>
+        <Button>
+            <Button.Background>
+                <ImageBrush ImageSource="Assets/DinoDiner-07.png"></ImageBrush>
+            </Button.Background>
+            VelociWrap
+        </Button>
     </WrapPanel>
 </Page>

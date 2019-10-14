@@ -24,9 +24,29 @@
             <RadioButton GroupName="Size" Content="Medium" />
             <RadioButton GroupName="Size" Content="Large" />
         </StackPanel>
-        <Button Grid.Row="1" Grid.Column="0">Fryceritops</Button>
-        <Button Grid.Row="1" Grid.Column="1">Meteor Mac &amp; Cheese</Button>
-        <Button Grid.Row="2" Grid.Column="0">Mezzorella Sticks</Button>
-        <Button Grid.Row="2" Grid.Column="1">Triceritots</Button>
+        <Button Grid.Row="1" Grid.Column="0">
+            <Button.Background>
+                <ImageBrush ImageSource="Assets/DinoDiner-08.png"></ImageBrush>
+            </Button.Background>
+            Fryceritops
+        </Button>
+        <Button Grid.Row="1" Grid.Column="1">
+            <Button.Background>
+                <ImageBrush ImageSource="Assets/DinoDiner-09.png"></ImageBrush>
+            </Button.Background>
+            Meteor Mac &amp; Cheese
+        </Button>
+        <Button Grid.Row="2" Grid.Column="0">
+            <Button.Background>
+                <ImageBrush ImageSource="Assets/DinoDiner-10.png"></ImageBrush>
+            </Button.Background>
+            Mezzorella Sticks
+        </Button>
+        <Button Grid.Row="2" Grid.Column="1">
+            <Button.Background>
+                <ImageBrush ImageSource="Assets/DinoDiner-11.png"></ImageBrush>
+            </Button.Background>
+            Triceritots
+        </Button>
     </Grid>
 </Page>

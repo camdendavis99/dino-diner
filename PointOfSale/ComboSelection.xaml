@@ -16,12 +16,10 @@
             </Style>
         </WrapPanel.Resources>
         <Button Click="EntreeSelected" Tag="Brontowurst Combo">
-            <StackPanel>
-                <TextBlock>
-                    <Run Text="Brontowurst Combo"/>
-                </TextBlock>
-                <Image Source="Assets/DinoDiner-01.png"/>
-            </StackPanel>
+            <Button.Background>
+                <ImageBrush ImageSource="Assets/DinoDiner-01.png"></ImageBrush>
+            </Button.Background>
+            Dino-Nuggets Combo
         </Button>
         <Button Click="EntreeSelected" Tag="Dino-Nuggets Combo">
             <Button.Background>
