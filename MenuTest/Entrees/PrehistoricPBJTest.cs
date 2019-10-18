@@ -51,9 +51,21 @@ namespace MenuTest.Entrees
         public void SpecialShouldHoldPeanutButter()
         {
             PrehistoricPBJ pbj = new PrehistoricPBJ();
-            pbj.HoldPeanutButter();
-            Assert.PropertyChanged(pbj.Special,
-                item => Assert.Equal("Hold Peanut Butter", item)
+            Assert.PropertyChanged(pbj, "Special", () =>
+                {
+                    pbj.HoldPeanutButter();
+                }
+            );
+        }
+
+        [Fact]
+        public void SpecialShouldHoldJelly()
+        {
+            PrehistoricPBJ pbj = new PrehistoricPBJ();
+            Assert.PropertyChanged(pbj, "Special", () =>
+            {
+                pbj.HoldJelly();
+            }
             );
         }
 
