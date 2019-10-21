@@ -8,13 +8,8 @@ using System.Text;
 
 namespace DinoDiner.Menu
 {
-    public interface IMenuItem
+    public interface IMenuItem : IOrderItem
     {
-        /// <summary>
-        /// Gets and sets the price
-        /// </summary>
-        double Price { get; }
-
         /// <summary>
         /// Gets and sets the calories
         /// </summary>

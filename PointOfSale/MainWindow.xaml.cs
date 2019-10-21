@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using DinoDiner.Menu;
 
 namespace PointOfSale
 {
@@ -23,6 +24,23 @@ namespace PointOfSale
         public MainWindow()
         {
             InitializeComponent();
+            Order order = (Order)DataContext;
+            order.Items.Add(new Brontowurst());
+        }
+
+        private void OnLoadCompleted(object sender, NavigationEventArgs args)
+        {
+
+        }
+
+        private void OnDataContextChanged(object sender, DependencyPropertyChangedEventArgs args)
+        {
+
+        }
+
+        private void SetFrameDataContext()
+        {
+            FrameworkElement content = OrderInterface.Content as FrameworkElement;
         }
     }
 }

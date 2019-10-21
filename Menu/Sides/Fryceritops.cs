@@ -74,6 +74,6 @@ namespace DinoDiner.Menu
         /// <summary>
         /// Returns a description of the side
         /// </summary>
-        public string Description => ToString();
+        public override string Description => ToString();
     }
 }

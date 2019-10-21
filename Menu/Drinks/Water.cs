@@ -57,12 +57,12 @@ namespace DinoDiner.Menu
         /// <summary>
         /// Returns a description of the drink
         /// </summary>
-        public string Description => ToString();
+        public override string Description => ToString();
 
         /// <summary>
         /// Returns a list of special properties of the drink
         /// </summary>
-        public string[] Special
+        public override string[] Special
         {
             get
             {

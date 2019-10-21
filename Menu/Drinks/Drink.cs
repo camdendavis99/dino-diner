@@ -55,5 +55,15 @@ namespace DinoDiner.Menu
         {
             Size = Size.Small;
         }
+
+        /// <summary>
+        /// Gets the list of special properties
+        /// </summary>
+        public virtual string[] Special { get; }
+
+        /// <summary>
+        /// Gets the description of the drink
+        /// </summary>
+        public virtual string Description { get; }
     }
 }

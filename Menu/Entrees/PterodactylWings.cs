@@ -47,20 +47,18 @@ namespace DinoDiner.Menu
         /// <summary>
         /// Returns a description of the entree
         /// </summary>
-        public string Description => ToString();
+        public override string Description => ToString();
 
         /// <summary>
         /// Returns a list of special properties of the entree
         /// </summary>
-        public string[] Special
+        public override string[] Special
         {
             get
             {
                 List<string> special = new List<string>();
                 return special.ToArray();
             }
-        }
-    }
         }
     }
 }

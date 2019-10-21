@@ -86,7 +86,7 @@ namespace DinoDiner.Menu
         /// <param name="entree">The entree to use</param>
         public CretaceousCombo(Entree entree)
         {
-            this.Entree = entree;
+            Entree = entree;
         }
 
         /// <summary>
@@ -98,7 +98,7 @@ namespace DinoDiner.Menu
             return $"{Entree} Combo";
         }
 
-        public string Description => this.ToString();
+        public string Description => ToString();
 
         public string[] Special
         {
