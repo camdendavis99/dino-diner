@@ -17,43 +17,43 @@
         </WrapPanel.Resources>
         <Button Click="EntreeSelected" Tag="Brontowurst Combo">
             <Button.Background>
-                <ImageBrush ImageSource="Assets/DinoDiner-01.png"></ImageBrush>
+                <ImageBrush ImageSource="Assets/DinoDiner-16.png"></ImageBrush>
             </Button.Background>
             Dino-Nuggets Combo
         </Button>
         <Button Click="EntreeSelected" Tag="Dino-Nuggets Combo">
             <Button.Background>
-                <ImageBrush ImageSource="Assets/DinoDiner-02.png"></ImageBrush>
+                <ImageBrush ImageSource="Assets/DinoDiner-17.png"></ImageBrush>
             </Button.Background>
             Dino-Nuggets Combo
         </Button>
         <Button Click="EntreeSelected" Tag="Steakosaurus Burger Combo">
             <Button.Background>
-                <ImageBrush ImageSource="Assets/DinoDiner-05.png"></ImageBrush>
+                <ImageBrush ImageSource="Assets/DinoDiner-20.png"></ImageBrush>
             </Button.Background>
             Steakosaurus Burger Combo
         </Button>
         <Button Click="EntreeSelected" Tag="T-Rex King Burger Combo">
             <Button.Background>
-                <ImageBrush ImageSource="Assets/DinoDiner-06.png"></ImageBrush>
+                <ImageBrush ImageSource="Assets/DinoDiner-21.png"></ImageBrush>
             </Button.Background>
             T-Rex King Burger Combo
         </Button>
         <Button Click="EntreeSelected" Tag="Pterodactyl Wings Combo">
             <Button.Background>
-                <ImageBrush ImageSource="Assets/DinoDiner-04.png"></ImageBrush>
+                <ImageBrush ImageSource="Assets/DinoDiner-19.png"></ImageBrush>
             </Button.Background>
             <Bold>Pterodactyl Wings Combo</Bold>
         </Button>
         <Button Click="EntreeSelected" Tag="Prehistoric PB&amp;J Combo">
             <Button.Background>
-                <ImageBrush ImageSource="Assets/DinoDiner-03.png"></ImageBrush>
+                <ImageBrush ImageSource="Assets/DinoDiner-18.png"></ImageBrush>
             </Button.Background>
             <Bold>Prehistoric PB&amp;J Combo</Bold>
         </Button>
         <Button Click="EntreeSelected" Tag="Velociwrap Combo">
             <Button.Background>
-                <ImageBrush ImageSource="Assets/DinoDiner-07.png"></ImageBrush>
+                <ImageBrush ImageSource="Assets/DinoDiner-22.png"></ImageBrush>
             </Button.Background>
             <TextBlock>
                 <Run FontWeight="Bold" FontSize="20" BaselineAlignment="Top" Text="Velociwrap Combo"></Run>
