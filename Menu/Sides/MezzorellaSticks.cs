@@ -59,7 +59,7 @@ namespace DinoDiner.Menu
         /// </summary>
         public MezzorellaSticks()
         {
-            this.Size = Size.Small;
+            Size = Size.Small;
         }
 
         /// <summary>
@@ -70,5 +70,10 @@ namespace DinoDiner.Menu
         {
             return $"{Size} Mezzorella Sticks";
         }
+
+        /// <summary>
+        /// Returns a description of the side
+        /// </summary>
+        public string Description => ToString();
     }
 }

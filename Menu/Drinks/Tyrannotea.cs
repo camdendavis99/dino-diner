@@ -110,5 +110,24 @@ namespace DinoDiner.Menu
             else
                 return $"{Size} Tyrannotea";
         }
+
+        /// <summary>
+        /// Returns a description of the drink
+        /// </summary>
+        public string Description => ToString();
+
+        /// <summary>
+        /// Returns a list of special properties of the drink
+        /// </summary>
+        public string[] Special
+        {
+            get
+            {
+                List<string> special = new List<string>();
+                if (!Ice) special.Add("Hold Ice");
+                if (Lemon) special.Add("Add Lemon");
+                return special.ToArray();
+            }
+        }
     }
 }

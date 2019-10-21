@@ -84,8 +84,14 @@ namespace DinoDiner.Menu
             return $"{Size} {Flavor} Sodasaurus";
         }
 
-        public string Description => this.ToString();
+        /// <summary>
+        /// Returns a description of the drink
+        /// </summary>
+        public string Description => ToString();
 
+        /// <summary>
+        /// Returns a list of special properties of the drink
+        /// </summary>
         public string[] Special
         {
             get

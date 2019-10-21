@@ -99,5 +99,24 @@ namespace DinoDiner.Menu
             else
                 return $"{Size} Jurassic Java";
         }
+
+        /// <summary>
+        /// Returns a description of the drink
+        /// </summary>
+        public string Description => ToString();
+
+        /// <summary>
+        /// Returns a list of special properties of the drink
+        /// </summary>
+        public string[] Special
+        {
+            get
+            {
+                List<string> special = new List<string>();
+                if (Ice) special.Add("Add Ice");
+                if (RoomForCream) special.Add("Add Cream");
+                return special.ToArray();
+            }
+        }
     }
 }
