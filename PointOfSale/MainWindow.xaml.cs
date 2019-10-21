@@ -41,6 +41,8 @@ namespace PointOfSale
         private void SetFrameDataContext()
         {
             FrameworkElement content = OrderInterface.Content as FrameworkElement;
+            if (content == null) return;
+            content.DataContext = OrderInterface.DataContext;
         }
     }
 }
