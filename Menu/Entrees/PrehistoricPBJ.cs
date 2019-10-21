@@ -82,8 +82,14 @@ namespace DinoDiner.Menu
             return "Prehistoric PB&J";
         }
 
-        public string Description => this.ToString();
+        /// <summary>
+        /// Returns a description of the entree
+        /// </summary>
+        public string Description => ToString();
 
+        /// <summary>
+        /// Returns a list of special properties of the entree
+        /// </summary>
         public string[] Special
         {
             get
