@@ -43,6 +43,7 @@ namespace DinoDiner.Menu
         public void AddLemon()
         {
             Lemon = true;
+            NotifyOfPropertyChange("Special");
         }
 
         /// <summary>
@@ -53,11 +54,6 @@ namespace DinoDiner.Menu
         {
             return $"{Size} Water";
         }
-
-        /// <summary>
-        /// Returns a description of the drink
-        /// </summary>
-        public override string Description => ToString();
 
         /// <summary>
         /// Returns a list of special properties of the drink

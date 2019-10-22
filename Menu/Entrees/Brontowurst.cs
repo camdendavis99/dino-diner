@@ -5,6 +5,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
 
 namespace DinoDiner.Menu
 {
@@ -45,8 +46,8 @@ namespace DinoDiner.Menu
         /// </summary>
         public Brontowurst()
         {
-            this.Price = 5.36;
-            this.Calories = 498;
+            Price = 5.36;
+            Calories = 498;
         }
 
         /// <summary>
@@ -55,6 +56,7 @@ namespace DinoDiner.Menu
         public void HoldBun()
         {
             this.bun = false;
+            NotifyOfPropertyChange("Special");
         }
 
         /// <summary>
@@ -63,6 +65,7 @@ namespace DinoDiner.Menu
         public void HoldPeppers()
         {
             this.peppers = false;
+            NotifyOfPropertyChange("Special");
         }
 
         /// <summary>
@@ -71,6 +74,7 @@ namespace DinoDiner.Menu
         public void HoldOnion()
         {
             this.onion = false;
+            NotifyOfPropertyChange("Special");
         }
 
         /// <summary>
@@ -81,11 +85,6 @@ namespace DinoDiner.Menu
         {
             return "Brontowurst";
         }
-
-        /// <summary>
-        /// Returns a description of the entree
-        /// </summary>
-        public override string Description => ToString();
 
         /// <summary>
         /// Returns a list of special properties of the entree

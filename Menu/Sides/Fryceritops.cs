@@ -34,6 +34,9 @@ namespace DinoDiner.Menu
                         Calories = 480;
                         break;
                 }
+                NotifyOfPropertyChange("Size");
+                NotifyOfPropertyChange("Price");
+                NotifyOfPropertyChange("Calories");
             }
         }
 
@@ -57,9 +60,10 @@ namespace DinoDiner.Menu
         /// Creates a new Fryceritops with default 
         /// Size, Price, and Calories
         /// </summary>
-        public Fryceritops()
+        public Fryceritops() : base()
         {
-            Size = Size.Small;
+            Price = 0.99;
+            Calories = 222;
         }
 
         /// <summary>
@@ -70,10 +74,5 @@ namespace DinoDiner.Menu
         {
             return $"{Size} Fryceritops";
         }
-
-        /// <summary>
-        /// Returns a description of the side
-        /// </summary>
-        public override string Description => ToString();
     }
 }

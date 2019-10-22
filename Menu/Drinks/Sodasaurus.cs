@@ -50,6 +50,9 @@ namespace DinoDiner.Menu
                         Calories = 208;
                         break;
                 }
+                NotifyOfPropertyChange("Size");
+                NotifyOfPropertyChange("Price");
+                NotifyOfPropertyChange("Calories");
             }
         }
 
@@ -72,7 +75,11 @@ namespace DinoDiner.Menu
         /// <summary>
         /// Creates a new Sodasaurus with default Size, Price, and Calories
         /// </summary>
-        public Sodasaurus() : base() { }
+        public Sodasaurus() : base()
+        {
+            Price = 1.50;
+            Calories = 112;
+        }
 
         /// <summary>
         /// Returns a string representation for Sodasaurus, including size
@@ -83,11 +90,6 @@ namespace DinoDiner.Menu
         {
             return $"{Size} {Flavor} Sodasaurus";
         }
-
-        /// <summary>
-        /// Returns a description of the drink
-        /// </summary>
-        public override string Description => ToString();
 
         /// <summary>
         /// Returns a list of special properties of the drink

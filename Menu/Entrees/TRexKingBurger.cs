@@ -96,6 +96,7 @@ namespace DinoDiner.Menu
         public void HoldBun()
         {
             bun = false;
+            NotifyOfPropertyChange("Special");
         }
 
         /// <summary>
@@ -104,6 +105,7 @@ namespace DinoDiner.Menu
         public void HoldLettuce()
         {
             lettuce = false;
+            NotifyOfPropertyChange("Special");
         }
 
         /// <summary>
@@ -112,6 +114,7 @@ namespace DinoDiner.Menu
         public void HoldTomato()
         {
             tomato = false;
+            NotifyOfPropertyChange("Special");
         }
 
         /// <summary>
@@ -120,6 +123,7 @@ namespace DinoDiner.Menu
         public void HoldOnion()
         {
             onion = false;
+            NotifyOfPropertyChange("Special");
         }
 
         /// <summary>
@@ -128,6 +132,7 @@ namespace DinoDiner.Menu
         public void HoldPickle()
         {
             pickle = false;
+            NotifyOfPropertyChange("Special");
         }
 
         /// <summary>
@@ -136,6 +141,7 @@ namespace DinoDiner.Menu
         public void HoldKetchup()
         {
             ketchup = false;
+            NotifyOfPropertyChange("Special");
         }
 
         /// <summary>
@@ -144,6 +150,7 @@ namespace DinoDiner.Menu
         public void HoldMustard()
         {
             mustard = false;
+            NotifyOfPropertyChange("Special");
         }
 
         /// <summary>
@@ -152,6 +159,7 @@ namespace DinoDiner.Menu
         public void HoldMayo()
         {
             mayo = false;
+            NotifyOfPropertyChange("Special");
         }
 
         /// <summary>
@@ -162,11 +170,6 @@ namespace DinoDiner.Menu
         {
             return "T-Rex King Burger";
         }
-
-        /// <summary>
-        /// Returns a description of the entree
-        /// </summary>
-        public override string Description => ToString();
 
         /// <summary>
         /// Returns a list of special properties of the entree

@@ -48,6 +48,7 @@ namespace DinoDiner.Menu
             this.nuggetCount++;
             this.Price += 0.25;
             this.Calories += 59;
+            NotifyOfPropertyChange("Special");
         }
 
         /// <summary>
@@ -58,11 +59,6 @@ namespace DinoDiner.Menu
         {
             return "Dino-Nuggets";
         }
-
-        /// <summary>
-        /// Returns a description of the entree
-        /// </summary>
-        public override string Description => ToString();
 
         /// <summary>
         /// Returns a list of special properties of the entree

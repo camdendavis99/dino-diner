@@ -34,6 +34,9 @@ namespace DinoDiner.Menu
                         Calories = 720;
                         break;
                 }
+                NotifyOfPropertyChange("Size");
+                NotifyOfPropertyChange("Price");
+                NotifyOfPropertyChange("Calories");
             }
         }
 
@@ -57,9 +60,10 @@ namespace DinoDiner.Menu
         /// Creates a new MezzorellaSticks with default 
         /// Size, Price, and Calories
         /// </summary>
-        public MezzorellaSticks()
+        public MezzorellaSticks() : base()
         {
-            Size = Size.Small;
+            Price = 0.99;
+            Calories = 540;
         }
 
         /// <summary>
@@ -70,10 +74,5 @@ namespace DinoDiner.Menu
         {
             return $"{Size} Mezzorella Sticks";
         }
-
-        /// <summary>
-        /// Returns a description of the side
-        /// </summary>
-        public override string Description => ToString();
     }
 }

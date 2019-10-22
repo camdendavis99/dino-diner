@@ -34,6 +34,9 @@ namespace DinoDiner.Menu
                         Calories = 520;
                         break;
                 }
+                NotifyOfPropertyChange("Size");
+                NotifyOfPropertyChange("Price");
+                NotifyOfPropertyChange("Calories");
             }
         }
 
@@ -57,9 +60,10 @@ namespace DinoDiner.Menu
         /// Creates a new MeteorMacAndCheese with 
         /// default Size, Price, and Calories
         /// </summary>
-        public MeteorMacAndCheese()
+        public MeteorMacAndCheese() : base()
         {
-            Size = Size.Small;
+            Price = 0.99;
+            Calories = 420;
         }
 
         /// <summary>
@@ -70,10 +74,5 @@ namespace DinoDiner.Menu
         {
             return $"{Size} Meteor Mac and Cheese";
         }
-
-        /// <summary>
-        /// Returns a description of the side
-        /// </summary>
-        public override string Description => ToString();
     }
 }

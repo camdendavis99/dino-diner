@@ -61,6 +61,7 @@ namespace DinoDiner.Menu
         public void HoldBun()
         {
             bun = false;
+            NotifyOfPropertyChange("Special");
         }
         
         /// <summary>
@@ -69,6 +70,7 @@ namespace DinoDiner.Menu
         public void HoldPickle()
         {
             pickle = false;
+            NotifyOfPropertyChange("Special");
         }
 
         /// <summary>
@@ -77,6 +79,7 @@ namespace DinoDiner.Menu
         public void HoldKetchup()
         {
             ketchup = false;
+            NotifyOfPropertyChange("Special");
         }
 
         /// <summary>
@@ -85,6 +88,7 @@ namespace DinoDiner.Menu
         public void HoldMustard()
         {
             mustard = false;
+            NotifyOfPropertyChange("Special");
         }
 
         /// <summary>
@@ -95,11 +99,6 @@ namespace DinoDiner.Menu
         {
             return "Steakosaurus Burger";
         }
-
-        /// <summary>
-        /// Returns a description of the entree
-        /// </summary>
-        public override string Description => ToString();
 
         /// <summary>
         /// Returns a list of special properties of the entree

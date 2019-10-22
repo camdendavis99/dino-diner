@@ -28,6 +28,7 @@ namespace PointOfSale
 
         public void AddFryceritops(object sender, RoutedEventArgs args)
         {
+            /*
             OrderControl order = (Order)DataContext;
             order.Items.Add(new Fryceritops());
             BtnAddFryceritops.IsEnabled = false;
@@ -37,6 +38,22 @@ namespace PointOfSale
             BtnPickSmall.IsEnabled = true;
             BtnPickMedium.IsEnabled = true;
             BtnPickLarge.IsEnabled = true;
+            */
+        }
+
+        public void AddMeteorMacAndCheese(object sender, RoutedEventArgs args)
+        {
+
+        }
+
+        public void AddMezzorellaSticks(object sender, RoutedEventArgs args)
+        {
+
+        }
+
+        public void AddTriceritots(object sender, RoutedEventArgs args)
+        {
+            
         }
     }
 }

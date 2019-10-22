@@ -5,10 +5,11 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
 
 namespace DinoDiner.Menu
 {
-    public abstract class Drink : IMenuItem
+    public abstract class Drink : IMenuItem, INotifyPropertyChanged
     {
         /// <summary>
         /// Stores the size
@@ -46,15 +47,19 @@ namespace DinoDiner.Menu
         public void HoldIce()
         {
             Ice = false;
+            NotifyOfPropertyChange("Special");
         }
 
         /// <summary>
-        /// Creates a new drink with default size, price, and calories
+        /// Returns the string representation of this menu item
         /// </summary>
-        public Drink()
-        {
-            Size = Size.Small;
-        }
+        /// <returns>String representation of menu item</returns>
+        public abstract override string ToString();
+
+        /// <summary>
+        /// Gets the description of the drink
+        /// </summary>
+        public string Description => ToString();
 
         /// <summary>
         /// Gets the list of special properties
@@ -62,8 +67,21 @@ namespace DinoDiner.Menu
         public virtual string[] Special { get; }
 
         /// <summary>
-        /// Gets the description of the drink
+        /// The PropertyChanged event handler; notifies
+        /// of changes to the Price, Description, and
+        /// Special properties
         /// </summary>
-        public virtual string Description { get; }
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        // Helper function for notifying of property changes
+        protected void NotifyOfPropertyChange(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+        public Drink()
+        {
+            size = Size.Small;
+        }
     }
 }

@@ -64,6 +64,9 @@ namespace DinoDiner.Menu
                         break;
                 }
                 if (sweet) Calories *= 2;
+                NotifyOfPropertyChange("Size");
+                NotifyOfPropertyChange("Price");
+                NotifyOfPropertyChange("Calories");
             }
         }
 
@@ -88,7 +91,11 @@ namespace DinoDiner.Menu
         /// <summary>
         /// Creates a new Tyrannotea with default Size, Price, and Calories
         /// </summary>
-        public Tyrannotea() : base() { }
+        public Tyrannotea() : base()
+        {
+            Price = 0.99;
+            Calories = 8;
+        }
 
         /// <summary>
         /// Adds lemon to the tea
@@ -96,6 +103,7 @@ namespace DinoDiner.Menu
         public void AddLemon()
         {
             Lemon = true;
+            NotifyOfPropertyChange("Special");
         }
 
         /// <summary>
@@ -110,11 +118,6 @@ namespace DinoDiner.Menu
             else
                 return $"{Size} Tyrannotea";
         }
-
-        /// <summary>
-        /// Returns a description of the drink
-        /// </summary>
-        public override string Description => ToString();
 
         /// <summary>
         /// Returns a list of special properties of the drink

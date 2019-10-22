@@ -59,6 +59,7 @@ namespace DinoDiner.Menu
         public void HoldDressing()
         {
             dressing = false;
+            NotifyOfPropertyChange("Special");
         }
 
         /// <summary>
@@ -67,6 +68,7 @@ namespace DinoDiner.Menu
         public void HoldLettuce()
         {
             lettuce = false;
+            NotifyOfPropertyChange("Special");
         }
 
         /// <summary>
@@ -75,6 +77,7 @@ namespace DinoDiner.Menu
         public void HoldCheese()
         {
             cheese = false;
+            NotifyOfPropertyChange("Special");
         }
 
         /// <summary>
@@ -85,11 +88,6 @@ namespace DinoDiner.Menu
         {
             return "Veloci-Wrap";
         }
-
-        /// <summary>
-        /// Returns a description of the entree
-        /// </summary>
-        public override string Description => ToString();
 
         /// <summary>
         /// Returns a list of special properties of the entree

@@ -44,6 +44,9 @@ namespace DinoDiner.Menu
                         Calories = 8;
                         break;
                 }
+                NotifyOfPropertyChange("Size");
+                NotifyOfPropertyChange("Price");
+                NotifyOfPropertyChange("Calories");
             }
         }
 
@@ -68,6 +71,8 @@ namespace DinoDiner.Menu
         /// </summary>
         public JurassicJava() : base()
         {
+            Price = 0.59;
+            Calories = 2;
             Ice = false;
         }
 
@@ -77,6 +82,7 @@ namespace DinoDiner.Menu
         public void LeaveRoomForCream()
         {
             RoomForCream = true;
+            NotifyOfPropertyChange("Special");
         }
 
         /// <summary>
@@ -85,6 +91,7 @@ namespace DinoDiner.Menu
         public void AddIce()
         {
             Ice = true;
+            NotifyOfPropertyChange("Special");
         }
 
         /// <summary>
@@ -99,11 +106,6 @@ namespace DinoDiner.Menu
             else
                 return $"{Size} Jurassic Java";
         }
-
-        /// <summary>
-        /// Returns a description of the drink
-        /// </summary>
-        public override string Description => ToString();
 
         /// <summary>
         /// Returns a list of special properties of the drink

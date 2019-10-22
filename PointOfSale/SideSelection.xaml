@@ -20,11 +20,11 @@
         </Grid.RowDefinitions>
         <StackPanel Grid.Row="0">
             <Label>Size:</Label>
-            <RadioButton GroupName="Size" Content="Small" />
-            <RadioButton GroupName="Size" Content="Medium" />
-            <RadioButton GroupName="Size" Content="Large" />
+            <RadioButton Name="BtnPickSmall" GroupName="Size" Content="Small" />
+            <RadioButton Name="BtnPickMedium" GroupName="Size" Content="Medium" />
+            <RadioButton Name="BtnPickLarge" GroupName="Size" Content="Large" />
         </StackPanel>
-        <Button Name="BtnAddFryceritops" Click="AddFryceritots" Grid.Row="1" Grid.Column="0">
+        <Button Name="BtnAddFryceritops" Click="AddFryceritops" Grid.Row="1" Grid.Column="0">
             <Button.Background>
                 <ImageBrush ImageSource="Assets/DinoDiner-08.png"></ImageBrush>
             </Button.Background>

@@ -45,11 +45,6 @@ namespace DinoDiner.Menu
         }
 
         /// <summary>
-        /// Returns a description of the entree
-        /// </summary>
-        public override string Description => ToString();
-
-        /// <summary>
         /// Returns a list of special properties of the entree
         /// </summary>
         public override string[] Special

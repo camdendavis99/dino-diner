@@ -7,7 +7,7 @@ using System.ComponentModel;
 
 namespace DinoDiner.Menu
 {
-    public class PrehistoricPBJ : Entree, INotifyPropertyChanged
+    public class PrehistoricPBJ : Entree
     {
         /// <summary>
         /// Whether or not the PBJ will have peanut butter
@@ -18,19 +18,6 @@ namespace DinoDiner.Menu
         /// Whether or not the PBJ will have jelly
         /// </summary>
         private bool jelly = true;
-
-        /// <summary>
-        /// The PropertyChanged event handler; notifies
-        /// of changes to the Price, Description, and
-        /// Special properties
-        /// </summary>
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        // Helper function for notifying of property changes
-        private void NotifyOfPropertyChange(string propertyName)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
 
         /// <summary>
         /// Gets the list of ingredients base on which have been chosen
@@ -81,11 +68,6 @@ namespace DinoDiner.Menu
         {
             return "Prehistoric PB&J";
         }
-
-        /// <summary>
-        /// Returns a description of the entree
-        /// </summary>
-        public override string Description => ToString();
 
         /// <summary>
         /// Returns a list of special properties of the entree
