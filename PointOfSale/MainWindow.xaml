@@ -15,7 +15,7 @@
             x:Name="OrderList" 
             DockPanel.Dock="Right" 
             Width="200"/>
-        <Frame Name="OrderInterface" 
+        <Frame Name="OrderUI" 
                LoadCompleted="OnLoadCompleted"
                DataContextChanged="OnDataContextChanged"
                Source="MenuCategorySelection.xaml"></Frame>

@@ -24,25 +24,34 @@ namespace PointOfSale
         public MainWindow()
         {
             InitializeComponent();
+            OrderControl.NavigationService = OrderUI.NavigationService;
             Order order = (Order)DataContext;
             order.Items.Add(new Brontowurst());
         }
 
+        private void SetFrameDataContext()
+        {
+            FrameworkElement content = OrderUI.Content as FrameworkElement;
+            if (content == null) return;
+            content.DataContext = OrderUI.DataContext;
+        }
+
+        private void BindDataContextToPage()
+        {
+            if (OrderUI.Content is FrameworkElement element)
+            {
+                element.DataContext = OrderUI.DataContext;
+            }
+        }
+
         private void OnLoadCompleted(object sender, NavigationEventArgs args)
         {
-
+            BindDataContextToPage();
         }
 
         private void OnDataContextChanged(object sender, DependencyPropertyChangedEventArgs args)
         {
 
-        }
-
-        private void SetFrameDataContext()
-        {
-            FrameworkElement content = OrderInterface.Content as FrameworkElement;
-            if (content == null) return;
-            content.DataContext = OrderInterface.DataContext;
         }
     }
 }

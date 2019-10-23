@@ -21,13 +21,74 @@ namespace PointOfSale
     /// </summary>
     public partial class SideSelection : Page
     {
+        protected Side Side { get; set; }
+
         public SideSelection()
         {
             InitializeComponent();
         }
 
+        public SideSelection(Side side)
+        {
+            InitializeComponent();
+            Side = side;
+        }
+
+        private void SelectSide(Side side)
+        {
+            if (DataContext is Order order)
+            {
+                order.Items.Add(side);
+                Side = side;
+            }
+        }
+
+        private void SelectSize(DinoDiner.Menu.Size size)
+        {
+            if (Side != null)
+            {
+                Side.Size = size;
+            }
+        }
+
+        private void OnMakeSmall(object sender, RoutedEventArgs args)
+        {
+            SelectSize(DinoDiner.Menu.Size.Small);
+        }
+
+        private void OnMakeMedium(object sender, RoutedEventArgs args)
+        {
+            SelectSize(DinoDiner.Menu.Size.Medium);
+        }
+
+        private void OnMakeLarge(object sender, RoutedEventArgs args)
+        {
+            SelectSize(DinoDiner.Menu.Size.Large);
+        }
+
+        public void OnSelectFryceritops(object sender, RoutedEventArgs args)
+        {
+            SelectSide(new Fryceritops());
+        }
+
+        public void OnSelectMeteorMacAndCheese(object sender, RoutedEventArgs args)
+        {
+            SelectSide(new MeteorMacAndCheese());
+        }
+
+        public void OnSelectMezzorellaSticks(object sender, RoutedEventArgs args)
+        {
+            SelectSide(new MezzorellaSticks());
+        }
+
+        public void OnSelectTriceritots(object sender, RoutedEventArgs args)
+        {
+            SelectSide(new Triceritots());
+        }
+
         public void AddFryceritops(object sender, RoutedEventArgs args)
         {
+            
             /*
             OrderControl order = (Order)DataContext;
             order.Items.Add(new Fryceritops());

@@ -20,9 +20,18 @@
         </Grid.RowDefinitions>
         <StackPanel Grid.Row="0">
             <Label>Size:</Label>
-            <RadioButton Name="BtnPickSmall" GroupName="Size" Content="Small" />
-            <RadioButton Name="BtnPickMedium" GroupName="Size" Content="Medium" />
-            <RadioButton Name="BtnPickLarge" GroupName="Size" Content="Large" />
+            <RadioButton Name="MakeSmall" 
+                         Click="OnMakeSmall"
+                         GroupName="Size" 
+                         Content="Small" />
+            <RadioButton Name="MakeMedium" 
+                         Click="OnMakeMedium"
+                         GroupName="Size" 
+                         Content="Medium" />
+            <RadioButton Name="MakeLarge"
+                         Click="OnMakeLarge" 
+                         GroupName="Size" 
+                         Content="Large" />
         </StackPanel>
         <Button Name="BtnAddFryceritops" Click="AddFryceritops" Grid.Row="1" Grid.Column="0">
             <Button.Background>
