@@ -9,53 +9,71 @@
       Title="SideSelection">
 
     <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-        </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="90" />
-            <RowDefinition/>
-            <RowDefinition/>
+            <RowDefinition Height="100" />
+            <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <StackPanel Grid.Row="0">
-            <Label>Size:</Label>
-            <RadioButton Name="MakeSmall" 
-                         Click="OnMakeSmall"
-                         GroupName="Size" 
-                         Content="Small" />
-            <RadioButton Name="MakeMedium" 
-                         Click="OnMakeMedium"
-                         GroupName="Size" 
-                         Content="Medium" />
-            <RadioButton Name="MakeLarge"
-                         Click="OnMakeLarge" 
-                         GroupName="Size" 
-                         Content="Large" />
-        </StackPanel>
-        <Button Name="BtnAddFryceritops" Click="AddFryceritops" Grid.Row="1" Grid.Column="0">
-            <Button.Background>
-                <ImageBrush ImageSource="Assets/DinoDiner-08.png"></ImageBrush>
-            </Button.Background>
-            Fryceritops
-        </Button>
-        <Button Name="BtnAddMeteorMacAndCheese" Click="AddMeteorMacAndCheese" Grid.Row="1" Grid.Column="1">
-            <Button.Background>
-                <ImageBrush ImageSource="Assets/DinoDiner-09.png"></ImageBrush>
-            </Button.Background>
-            Meteor Mac &amp; Cheese
-        </Button>
-        <Button Name="BtnAddMezzorellaSticks" Click="AddMezzorellaSticks" Grid.Row="2" Grid.Column="0">
-            <Button.Background>
-                <ImageBrush ImageSource="Assets/DinoDiner-10.png"></ImageBrush>
-            </Button.Background>
-            Mezzorella Sticks
-        </Button>
-        <Button Name="BtnAddTriceritots" Click="AddTriceritots" Grid.Row="2" Grid.Column="1">
-            <Button.Background>
-                <ImageBrush ImageSource="Assets/DinoDiner-11.png"></ImageBrush>
-            </Button.Background>
-            Triceritots
-        </Button>
+
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Button Name="MakeSmall" 
+                    Click="OnMakeSmall"
+                    Grid.Column="0"
+                    Content="Small" 
+                    Background="LightBlue"/>
+            <Button Name="MakeMedium" 
+                    Click="OnMakeMedium"
+                    Grid.Column="1"
+                    Content="Medium" 
+                    Background="LightGray"/>
+            <Button Name="MakeLarge"
+                    Click="OnMakeLarge" 
+                    Grid.Column="2"
+                    Content="Large"
+                    Background="LightGray"/>
+        </Grid>
+
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            
+            <Button Name="BtnAddFryceritops" Click="AddFryceritops" Grid.Row="0" Grid.Column="0">
+                <Button.Background>
+                    <ImageBrush ImageSource="Assets/DinoDiner-08.png"></ImageBrush>
+                </Button.Background>
+                Fryceritops
+            </Button>
+            <Button Name="BtnAddMeteorMacAndCheese" Click="AddMeteorMacAndCheese" Grid.Row="0" Grid.Column="1">
+                <Button.Background>
+                    <ImageBrush ImageSource="Assets/DinoDiner-09.png"></ImageBrush>
+                </Button.Background>
+                Meteor Mac &amp; Cheese
+            </Button>
+            <Button Name="BtnAddMezzorellaSticks" Click="AddMezzorellaSticks" Grid.Row="1" Grid.Column="0">
+                <Button.Background>
+                    <ImageBrush ImageSource="Assets/DinoDiner-10.png"></ImageBrush>
+                </Button.Background>
+                Mezzorella Sticks
+            </Button>
+            <Button Name="BtnAddTriceritots" Click="AddTriceritots" Grid.Row="1" Grid.Column="1">
+                <Button.Background>
+                    <ImageBrush ImageSource="Assets/DinoDiner-11.png"></ImageBrush>
+                </Button.Background>
+                Triceritots
+            </Button>
+        </Grid>
     </Grid>
+    
+    
 </Page>

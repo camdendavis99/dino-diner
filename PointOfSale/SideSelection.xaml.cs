@@ -53,16 +53,25 @@ namespace PointOfSale
 
         private void OnMakeSmall(object sender, RoutedEventArgs args)
         {
+            MakeSmall.Background = Brushes.LightBlue;
+            MakeMedium.Background = Brushes.LightGray;
+            MakeLarge.Background = Brushes.LightGray;
             SelectSize(DinoDiner.Menu.Size.Small);
         }
 
         private void OnMakeMedium(object sender, RoutedEventArgs args)
         {
+            MakeSmall.Background = Brushes.LightGray;
+            MakeMedium.Background = Brushes.LightBlue;
+            MakeLarge.Background = Brushes.LightGray;
             SelectSize(DinoDiner.Menu.Size.Medium);
         }
 
         private void OnMakeLarge(object sender, RoutedEventArgs args)
         {
+            MakeSmall.Background = Brushes.LightGray;
+            MakeMedium.Background = Brushes.LightGray;
+            MakeLarge.Background = Brushes.LightBlue;
             SelectSize(DinoDiner.Menu.Size.Large);
         }
 
