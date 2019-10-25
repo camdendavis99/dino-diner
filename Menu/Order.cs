@@ -1,4 +1,8 @@
-﻿using System;
+﻿/*  Order.cs
+*   Author: Camden Davis
+*/
+
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Collections.ObjectModel;
@@ -66,6 +70,9 @@ namespace DinoDiner.Menu
         /// </summary>
         public double TotalCost => SubtotalCost + SalesTaxCost;
 
+        /// <summary>
+        /// Constructor - Creates a new Order object
+        /// </summary>
         public Order()
         {
             Items = new ObservableCollection<IOrderItem>();
@@ -73,6 +80,11 @@ namespace DinoDiner.Menu
             Items.CollectionChanged += OnCollectionChanged;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
         private void OnCollectionChanged(object sender, EventArgs args)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SubtotalCost"));

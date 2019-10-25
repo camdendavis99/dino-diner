@@ -9,31 +9,31 @@
       Title="SideSelection">
 
     <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="100" />
-            <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="0.25*"/>
+        </Grid.ColumnDefinitions>
 
-        <Grid Grid.Row="0">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-            </Grid.ColumnDefinitions>
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
 
             <Button Name="MakeSmall" 
                     Click="OnMakeSmall"
-                    Grid.Column="0"
+                    Grid.Row="0"
                     Content="Small" 
                     Background="LightBlue"/>
             <Button Name="MakeMedium" 
                     Click="OnMakeMedium"
-                    Grid.Column="1"
+                    Grid.Row="1"
                     Content="Medium" 
                     Background="LightGray"/>
             <Button Name="MakeLarge"
                     Click="OnMakeLarge" 
-                    Grid.Column="2"
+                    Grid.Row="2"
                     Content="Large"
                     Background="LightGray"/>
         </Grid>
@@ -47,7 +47,7 @@
                 <RowDefinition/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
-            
+
             <Button Name="BtnAddFryceritops" Click="AddFryceritops" Grid.Row="0" Grid.Column="0">
                 <Button.Background>
                     <ImageBrush ImageSource="Assets/DinoDiner-08.png"></ImageBrush>
@@ -74,6 +74,4 @@
             </Button>
         </Grid>
     </Grid>
-    
-    
 </Page>

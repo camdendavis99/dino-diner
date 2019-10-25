@@ -41,8 +41,8 @@
         </ListBox>
         <Border Grid.Row="2">
             <StackPanel Orientation="Horizontal">
-                <TextBox Text="Price:"/>
-                <TextBox Text="$____"/>
+                <TextBlock Text="Price:"/>
+                <TextBlock Text="{Binding Path=TotalCost, StringFormat=C}"/>
             </StackPanel>
         </Border>
         <TextBox Text="Buttons Go Here" Grid.Row="3"/>

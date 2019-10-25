@@ -8,54 +8,59 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="EntreeSelection">
 
-    <WrapPanel>
-        <WrapPanel.Resources>
-            <Style TargetType="Button">
-                <Setter Property="Width" Value="200"></Setter>
-                <Setter Property="Height" Value="150"></Setter>
-            </Style>
-        </WrapPanel.Resources>
-        <Button>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Button Click="AddBrontowurst" Grid.Row="0" Grid.Column="0">
             <Button.Background>
                 <ImageBrush ImageSource="Assets/DinoDiner-01.png"></ImageBrush>
             </Button.Background>
             Brontowurst
         </Button>
-        <Button>
+        <Button Click="AddDinoNuggets" Grid.Row="0" Grid.Column="1">
             <Button.Background>
                 <ImageBrush ImageSource="Assets/DinoDiner-02.png"></ImageBrush>
             </Button.Background>
             Dino-Nuggets
         </Button>
-        <Button>
+        <Button Click="AddSteakosaurusBurger" Grid.Row="1" Grid.Column="0">
             <Button.Background>
                 <ImageBrush ImageSource="Assets/DinoDiner-05.png"></ImageBrush>
             </Button.Background>
             Steakosaurus Burger
         </Button>
-        <Button>
+        <Button Click="AddTRexKingBurger" Grid.Row="1" Grid.Column="1">
             <Button.Background>
                 <ImageBrush ImageSource="Assets/DinoDiner-06.png"></ImageBrush>
             </Button.Background>
             T-Rex King Burger
         </Button>
-        <Button>
+        <Button Click="AddPterodactylWings" Grid.Row="2" Grid.Column="0">
             <Button.Background>
                 <ImageBrush ImageSource="Assets/DinoDiner-04.png"></ImageBrush>
             </Button.Background>
             Pterodactyl Wings
         </Button>
-        <Button>
+        <Button Click="AddPrehistoricPBJ" Grid.Row="2" Grid.Column="1">
             <Button.Background>
                 <ImageBrush ImageSource="Assets/DinoDiner-03.png"></ImageBrush>
             </Button.Background>
             Prehistoric PB&amp;J
         </Button>
-        <Button>
+        <Button Click="AddVelociWrap" Grid.Row="2" Grid.Column="2">
             <Button.Background>
                 <ImageBrush ImageSource="Assets/DinoDiner-07.png"></ImageBrush>
             </Button.Background>
             VelociWrap
         </Button>
-    </WrapPanel>
+    </Grid>
 </Page>

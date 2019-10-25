@@ -1,4 +1,8 @@
-﻿using System;
+﻿/*  SideSelection.xaml.cs
+*   Author: Camden Davis
+*/
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -21,36 +25,68 @@ namespace PointOfSale
     /// </summary>
     public partial class SideSelection : Page
     {
-        protected Side Side { get; set; }
+        /// <summary>
+        /// Stores the selected side
+        /// </summary>
+        public Side Side { get; private set; }
 
+        /// <summary>
+        /// Stores the selected size
+        /// </summary>
+        public DinoDiner.Menu.Size Size { get; private set; } = DinoDiner.Menu.Size.Small;
+
+        /// <summary>
+        /// Default Constructor - Creates a new side selection page
+        /// </summary>
         public SideSelection()
         {
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Overflow Constructor - Creates a new side selection page 
+        /// with a given selected side
+        /// </summary>
+        /// <param name="side"></param>
         public SideSelection(Side side)
         {
             InitializeComponent();
             Side = side;
         }
 
+        /// <summary>
+        /// Adds the given side to the order
+        /// </summary>
+        /// <param name="side">side to be added</param>
         private void SelectSide(Side side)
         {
             if (DataContext is Order order)
             {
+                side.Size = Size;
                 order.Items.Add(side);
                 Side = side;
             }
         }
 
+        /// <summary>
+        /// Changes the selected size, and size of side if a 
+        /// side is selected.
+        /// </summary>
+        /// <param name="size"></param>
         private void SelectSize(DinoDiner.Menu.Size size)
         {
             if (Side != null)
             {
                 Side.Size = size;
             }
+            Size = size;
         }
 
+        /// <summary>
+        /// Sets the size to small and updates button
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
         private void OnMakeSmall(object sender, RoutedEventArgs args)
         {
             MakeSmall.Background = Brushes.LightBlue;
@@ -59,6 +95,11 @@ namespace PointOfSale
             SelectSize(DinoDiner.Menu.Size.Small);
         }
 
+        /// <summary>
+        /// Sets the size to medium and updates button
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
         private void OnMakeMedium(object sender, RoutedEventArgs args)
         {
             MakeSmall.Background = Brushes.LightGray;
@@ -67,6 +108,11 @@ namespace PointOfSale
             SelectSize(DinoDiner.Menu.Size.Medium);
         }
 
+        /// <summary>
+        /// Sets the size to large and updates button
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
         private void OnMakeLarge(object sender, RoutedEventArgs args)
         {
             MakeSmall.Background = Brushes.LightGray;
@@ -75,55 +121,48 @@ namespace PointOfSale
             SelectSize(DinoDiner.Menu.Size.Large);
         }
 
-        public void OnSelectFryceritops(object sender, RoutedEventArgs args)
+        /// <summary>
+        /// Event handler for Fryceritops button;
+        /// Adds a Fryceritops to the order
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
+        public void AddFryceritops(object sender, RoutedEventArgs args)
         {
             SelectSide(new Fryceritops());
         }
 
-        public void OnSelectMeteorMacAndCheese(object sender, RoutedEventArgs args)
+        /// <summary>
+        /// Event handler for MeteorMacAndCheese button;
+        /// Adds a MeteorMacAndCheese to the order
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
+        public void AddMeteorMacAndCheese(object sender, RoutedEventArgs args)
         {
             SelectSide(new MeteorMacAndCheese());
         }
 
-        public void OnSelectMezzorellaSticks(object sender, RoutedEventArgs args)
+        /// <summary>
+        /// Event handler for MezzorellaSticks button;
+        /// Adds a MezzorellaSticks to the order
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
+        public void AddMezzorellaSticks(object sender, RoutedEventArgs args)
         {
             SelectSide(new MezzorellaSticks());
         }
 
-        public void OnSelectTriceritots(object sender, RoutedEventArgs args)
-        {
-            SelectSide(new Triceritots());
-        }
-
-        public void AddFryceritops(object sender, RoutedEventArgs args)
-        {
-            
-            /*
-            OrderControl order = (Order)DataContext;
-            order.Items.Add(new Fryceritops());
-            BtnAddFryceritops.IsEnabled = false;
-            BtnAddTriceritots.IsEnabled = false;
-            BtnAddMeteorMacAndCheese.IsEnabled = false;
-            BtnAddMezzorellaSticks.IsEnabled = false;
-            BtnPickSmall.IsEnabled = true;
-            BtnPickMedium.IsEnabled = true;
-            BtnPickLarge.IsEnabled = true;
-            */
-        }
-
-        public void AddMeteorMacAndCheese(object sender, RoutedEventArgs args)
-        {
-
-        }
-
-        public void AddMezzorellaSticks(object sender, RoutedEventArgs args)
-        {
-
-        }
-
+        /// <summary>
+        /// Event handler for Triceritots button;
+        /// Adds a Triceritots to the order
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
         public void AddTriceritots(object sender, RoutedEventArgs args)
         {
-            
+            SelectSide(new Triceritots());
         }
     }
 }
