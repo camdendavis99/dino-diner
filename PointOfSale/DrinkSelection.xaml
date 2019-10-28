@@ -24,25 +24,41 @@
             <RadioButton GroupName="Size" Content="Medium" />
             <RadioButton GroupName="Size" Content="Large" />
         </StackPanel>
-        <Button Click="SelectFlavor" Grid.Row="1" Grid.Column="0">
+
+        <Grid Grid.Row="0" Grid.ColumnSpan="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <StackPanel Grid.Column="1" Name="Options">
+                <CheckBox Name="Ice">Ice</CheckBox>
+            </StackPanel>
+            <Button Click="OnClickDone" Grid.Column="2" Background="Green">
+                Done
+            </Button>
+        </Grid>
+        
+        <Button Click="OnSelectSodasaurus" Grid.Row="1" Grid.Column="0">
             <Button.Background>
                 <ImageBrush ImageSource="Assets/DinoDiner-14.png"></ImageBrush>
             </Button.Background>
             Sodasaurus
         </Button>
-        <Button Grid.Row="1" Grid.Column="1">
+        <Button Click="OnSelectTyrannotea" Grid.Row="1" Grid.Column="1">
             <Button.Background>
                 <ImageBrush ImageSource="Assets/DinoDiner-12.png"></ImageBrush>
             </Button.Background>
             Tyrannotea
         </Button>
-        <Button Grid.Row="2" Grid.Column="0">
+        <Button Click="OnSelectJurassicJava" Grid.Row="2" Grid.Column="0">
             <Button.Background>
                 <ImageBrush ImageSource="Assets/DinoDiner-13.png"></ImageBrush>
             </Button.Background>
             Jurassic Java
         </Button>
-        <Button Grid.Row="2" Grid.Column="1">
+        <Button Click="OnSelectWater" Grid.Row="2" Grid.Column="1">
             <Button.Background>
                 <ImageBrush ImageSource="Assets/DinoDiner-15.png"></ImageBrush>
             </Button.Background>

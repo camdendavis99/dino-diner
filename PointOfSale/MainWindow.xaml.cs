@@ -26,7 +26,7 @@ namespace PointOfSale
             InitializeComponent();
             OrderControl.NavigationService = OrderUI.NavigationService;
             Order order = (Order)DataContext;
-            order.Items.Add(new Brontowurst());
+            order.Add(new Brontowurst());
         }
 
         private void SetFrameDataContext()

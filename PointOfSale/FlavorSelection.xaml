@@ -8,19 +8,40 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="FlavorSelection">
 
-    <WrapPanel>
-        <WrapPanel.Resources>
-            <Style TargetType="Button">
-                <Setter Property="Width" Value="200"></Setter>
-                <Setter Property="Height" Value="150"></Setter>
-            </Style>
-        </WrapPanel.Resources>
-        <Button>Cherry</Button>
-        <Button>Chocolate</Button>
-        <Button>Cola</Button>
-        <Button>Lime</Button>
-        <Button>Orange</Button>
-        <Button>Root Beet</Button>
-        <Button>Vanilla</Button>
-    </WrapPanel>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Button Grid.Row="0" Grid.Column="0" Click="OnPickCherry">Cherry</Button>
+            <Button Grid.Row="0" Grid.Column="1" Click="OnPickChocolate">Chocolate</Button>
+            <Button Grid.Row="1" Grid.Column="0" Click="OnPickCola">Cola</Button>
+            <Button Grid.Row="1" Grid.Column="1" Click="OnPickLime">Lime</Button>
+
+        </Grid>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+
+            <Button Grid.Column="0" Click="OnPickOrange">Orange</Button>
+            <Button Grid.Column="1" Click="OnPickRootBeer">Root Beer</Button>
+            <Button Grid.Column="2" Click="OnPickVanilla">Vanilla</Button>
+        </Grid>
+    </Grid>
+    
 </Page>

@@ -79,6 +79,7 @@ namespace DinoDiner.Menu
         {
             Price = 1.50;
             Calories = 112;
+            Flavor = SodasaurusFlavor.Cola;
         }
 
         /// <summary>
