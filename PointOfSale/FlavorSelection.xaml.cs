@@ -52,7 +52,7 @@ namespace PointOfSale
         private void PickFlavor(SodasaurusFlavor flavor)
         {
             soda.Flavor = flavor;
-            NavigationService.Navigate(new DrinkSelection());
+            NavigationService.Navigate(new DrinkSelection(soda));
         }
 
         /// <summary>
