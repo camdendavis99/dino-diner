@@ -1,4 +1,8 @@
-﻿using System;
+﻿/*  MainWindow.xaml.cs
+*   Author: Camden Davis
+*/
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -21,14 +25,19 @@ namespace PointOfSale
     /// </summary>
     public partial class MainWindow : Window
     {
+        /// <summary>
+        /// Constructor - 
+        /// </summary>
         public MainWindow()
         {
             InitializeComponent();
             OrderControl.NavigationService = OrderUI.NavigationService;
             Order order = (Order)DataContext;
-            order.Add(new Brontowurst());
         }
 
+        /// <summary>
+        /// Updates the DataContext
+        /// </summary>
         private void SetFrameDataContext()
         {
             FrameworkElement content = OrderUI.Content as FrameworkElement;
@@ -36,6 +45,9 @@ namespace PointOfSale
             content.DataContext = OrderUI.DataContext;
         }
 
+        /// <summary>
+        /// Binds data to WPF elements
+        /// </summary>
         private void BindDataContextToPage()
         {
             if (OrderUI.Content is FrameworkElement element)
@@ -44,11 +56,21 @@ namespace PointOfSale
             }
         }
 
+        /// <summary>
+        /// Event handler for finishing loading
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
         private void OnLoadCompleted(object sender, NavigationEventArgs args)
         {
             BindDataContextToPage();
         }
 
+        /// <summary>
+        /// Event handler for changing DataContext
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
         private void OnDataContextChanged(object sender, DependencyPropertyChangedEventArgs args)
         {
 

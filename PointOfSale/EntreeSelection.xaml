@@ -10,8 +10,7 @@
 
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition/>
-            <RowDefinition/>
+            <RowDefinition Height="2*"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
@@ -20,30 +19,42 @@
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
 
-        <Button Click="AddBrontowurst" Grid.Row="0" Grid.Column="0">
-            <Button.Background>
-                <ImageBrush ImageSource="Assets/DinoDiner-01.png"></ImageBrush>
-            </Button.Background>
-            Brontowurst
-        </Button>
-        <Button Click="AddDinoNuggets" Grid.Row="0" Grid.Column="1">
-            <Button.Background>
-                <ImageBrush ImageSource="Assets/DinoDiner-02.png"></ImageBrush>
-            </Button.Background>
-            Dino-Nuggets
-        </Button>
-        <Button Click="AddSteakosaurusBurger" Grid.Row="1" Grid.Column="0">
-            <Button.Background>
-                <ImageBrush ImageSource="Assets/DinoDiner-05.png"></ImageBrush>
-            </Button.Background>
-            Steakosaurus Burger
-        </Button>
-        <Button Click="AddTRexKingBurger" Grid.Row="1" Grid.Column="1">
-            <Button.Background>
-                <ImageBrush ImageSource="Assets/DinoDiner-06.png"></ImageBrush>
-            </Button.Background>
-            T-Rex King Burger
-        </Button>
+        <Grid Grid.Row="0" Grid.ColumnSpan="3">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Button Click="AddBrontowurst" Grid.Row="0" Grid.Column="0">
+                <Button.Background>
+                    <ImageBrush ImageSource="Assets/DinoDiner-01.png"></ImageBrush>
+                </Button.Background>
+                Brontowurst
+            </Button>
+            <Button Click="AddDinoNuggets" Grid.Row="0" Grid.Column="1">
+                <Button.Background>
+                    <ImageBrush ImageSource="Assets/DinoDiner-02.png"></ImageBrush>
+                </Button.Background>
+                Dino-Nuggets
+            </Button>
+            <Button Click="AddSteakosaurusBurger" Grid.Row="1" Grid.Column="0">
+                <Button.Background>
+                    <ImageBrush ImageSource="Assets/DinoDiner-05.png"></ImageBrush>
+                </Button.Background>
+                Steakosaurus Burger
+            </Button>
+            <Button Click="AddTRexKingBurger" Grid.Row="1" Grid.Column="1">
+                <Button.Background>
+                    <ImageBrush ImageSource="Assets/DinoDiner-06.png"></ImageBrush>
+                </Button.Background>
+                T-Rex King Burger
+            </Button>
+        </Grid>
+
         <Button Click="AddPterodactylWings" Grid.Row="2" Grid.Column="0">
             <Button.Background>
                 <ImageBrush ImageSource="Assets/DinoDiner-04.png"></ImageBrush>

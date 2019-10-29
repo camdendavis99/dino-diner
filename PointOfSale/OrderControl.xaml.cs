@@ -1,4 +1,8 @@
-﻿using System;
+﻿/*  OrderControl.xaml.cs
+*   Author: Camden Davis
+*/
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -41,10 +45,17 @@ namespace PointOfSale
         /// <param name="args"></param>
         private void OnSelectionChanged(object sender, SelectionChangedEventArgs args)
         {
-            if (OrderItems.SelectedItem is Side side)
+            if (OrderItems.SelectedItem is Entree entree)
             {
-
+                NavigationService?.Navigate(new EntreeSelection(entree));
+            }
+            else if (OrderItems.SelectedItem is Side side)
+            {
                 NavigationService?.Navigate(new SideSelection(side));
+            }
+            else if (OrderItems.SelectedItem is Drink drink)
+            {
+                NavigationService?.Navigate(new DrinkSelection(drink));
             }
         }
 

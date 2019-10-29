@@ -1,4 +1,8 @@
-﻿using System;
+﻿/*  MenuCategorySelection.xaml.cs
+*   Author: Camden Davis
+*/
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,27 +24,49 @@ namespace PointOfSale
     /// </summary>
     public partial class MenuCategorySelection : Page
     {
+        /// <summary>
+        /// Constructor - Creates a new MenuCategorySelection page
+        /// </summary>
         public MenuCategorySelection()
         {
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Event handler for SelectCombo button
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
         private void SelectCombo(object sender, RoutedEventArgs args)
         {
             NavigationService.Navigate(new ComboSelection());
         }
 
+        /// <summary>
+        /// Event handler for SelectEntree button
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
         private void SelectEntree(object sender, RoutedEventArgs args)
         {
             NavigationService.Navigate(new EntreeSelection());
         }
 
+        /// <summary>
+        /// Event handler for SelectSide button
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
         private void SelectSide(object sender, RoutedEventArgs args)
         {
             NavigationService.Navigate(new SideSelection());
         }
 
-
+        /// <summary>
+        /// Event handler for SelectDrink button
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
         private void SelectDrink(object sender, RoutedEventArgs args)
         {
             NavigationService.Navigate(new DrinkSelection());

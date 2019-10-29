@@ -1,4 +1,8 @@
-﻿using System;
+﻿/*  ComboSelection.xaml.cs
+*   Author: Camden Davis
+*/
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,11 +24,19 @@ namespace PointOfSale
     /// </summary>
     public partial class ComboSelection : Page
     {
+        /// <summary>
+        /// Constructor - Creates a new ComboSelection page
+        /// </summary>
         public ComboSelection()
         {
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Event handler for selecting an entree
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
         public void EntreeSelected(object sender, RoutedEventArgs args)
         {
             Button button = (Button)sender;
