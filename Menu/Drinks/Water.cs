@@ -16,6 +16,20 @@ namespace DinoDiner.Menu
         public bool Lemon { get; set; } = false;
 
         /// <summary>
+        /// Gets or sets the size
+        /// </summary>
+        public override Size Size
+        {
+            get => size;
+            set
+            {
+                size = value;
+                NotifyOfPropertyChange("Price");
+                NotifyOfPropertyChange("Description");
+            }
+        }
+
+        /// <summary>
         /// Gets the list of ingredients based on which have been chosen
         /// </summary>
         public override List<string> Ingredients

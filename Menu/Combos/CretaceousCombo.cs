@@ -1,18 +1,18 @@
 ﻿using System.Collections.Generic;
+using System.ComponentModel;
 
 namespace DinoDiner.Menu
 {
     /// <summary>
     /// A class representing a combo meal
     /// </summary>
-    public class CretaceousCombo
+    public class CretaceousCombo : INotifyPropertyChanged
     {
         /// <summary>
         /// Stores the size
         /// </summary>
         private Size size;
-
-
+        
         /// <summary>
         /// Gets and sets the entree
         /// </summary>
@@ -27,6 +27,19 @@ namespace DinoDiner.Menu
         /// Gets and sets the drink
         /// </summary>
         public Drink Drink { get; set; } = new Sodasaurus();
+
+        /// <summary>
+        /// Event handler for any property changes
+        /// </summary>
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        // Helper function for notifying of property changes
+        protected void NotifyOfPropertyChange()
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Price"));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Special"));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Description"));
+        }
 
         /// <summary>
         /// Gets the price of the combo
@@ -61,6 +74,7 @@ namespace DinoDiner.Menu
                 size = value;
                 Drink.Size = value;
                 Side.Size = value;
+                NotifyOfPropertyChange();
             }
         }
 

@@ -92,7 +92,7 @@ namespace DinoDiner.Menu
         public bool Remove(IOrderItem item)
         {
             bool flag = items.Remove(item);
-            if (!flag)
+            if (flag)
             {
                 NotifyOfPropertyChanged();
             }

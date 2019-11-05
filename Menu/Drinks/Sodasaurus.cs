@@ -21,10 +21,22 @@ namespace DinoDiner.Menu
 
     public class Sodasaurus : Drink
     {
+        // Backing variable
+        private SodasaurusFlavor flavor;
+
         /// <summary>
         /// Gets or sets the flavor
         /// </summary>
-        public SodasaurusFlavor Flavor { get; set; }
+        public SodasaurusFlavor Flavor
+        {
+            get => flavor;
+            set
+            {
+                flavor = value;
+                NotifyOfPropertyChange("Flavor");
+                NotifyOfPropertyChange("Description");
+            }
+        }
 
         /// <summary>
         /// Gets or sets the size, and sets the Price or Calories accordingly
@@ -53,6 +65,7 @@ namespace DinoDiner.Menu
                 NotifyOfPropertyChange("Size");
                 NotifyOfPropertyChange("Price");
                 NotifyOfPropertyChange("Calories");
+                NotifyOfPropertyChange("Description");
             }
         }
 

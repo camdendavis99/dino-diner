@@ -31,6 +31,8 @@ namespace DinoDiner.Menu
                         Calories /= 2;
                     sweet = value;
                 }
+                NotifyOfPropertyChange("Sweet");
+                NotifyOfPropertyChange("Description");
             }
         }
 
@@ -67,6 +69,7 @@ namespace DinoDiner.Menu
                 NotifyOfPropertyChange("Size");
                 NotifyOfPropertyChange("Price");
                 NotifyOfPropertyChange("Calories");
+                NotifyOfPropertyChange("Description");
             }
         }
 
