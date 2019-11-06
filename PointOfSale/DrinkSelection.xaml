@@ -20,9 +20,9 @@
         </Grid.RowDefinitions>
         <StackPanel Grid.Row="0">
             <Label>Size:</Label>
-            <RadioButton GroupName="Size" Content="Small" />
-            <RadioButton GroupName="Size" Content="Medium" />
-            <RadioButton GroupName="Size" Content="Large" />
+            <RadioButton Name="Small" GroupName="Size" Content="Small" />
+            <RadioButton Name="Medium" GroupName="Size" Content="Medium" />
+            <RadioButton Name="Large" GroupName="Size" Content="Large" />
         </StackPanel>
 
         <Grid Grid.Row="0" Grid.ColumnSpan="2">

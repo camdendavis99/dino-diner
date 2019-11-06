@@ -1,0 +1,78 @@
+﻿<Page x:Class="PointOfSale.CustomizeTRexKingBurger"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:PointOfSale"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="CustomizeTRexKingBurger">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Button Name="HoldBun"
+            Grid.Row="0" 
+            Grid.Column="0" 
+            Click="OnHoldBun">
+            Hold Bun
+        </Button>
+        <Button Name="HoldLettuce" 
+                Grid.Row="0" 
+                Grid.Column="1" 
+                Click="OnHoldLettuce">
+            Hold Lettuce
+        </Button>
+        <Button Name="HoldTomato" 
+                Grid.Row="0" 
+                Grid.Column="2" 
+                Click="OnHoldTomato">
+            Hold Tomato
+        </Button>
+        <Button Name="HoldOnion" 
+                Grid.Row="1" 
+                Grid.Column="0" 
+                Click="OnHoldOnion">
+            Hold Onion
+        </Button>
+        <Button Name="HoldPickle" 
+                Grid.Row="1" 
+                Grid.Column="1" 
+                Click="OnHoldPickle">
+            Hold Pickle
+        </Button>
+        <Button Name="HoldKetchup" 
+                Grid.Row="1" 
+                Grid.Column="2" 
+                Click="OnHoldKetchup">
+            Hold Ketchup
+        </Button>
+        <Button Name="HoldMustard" 
+                Grid.Row="2" 
+                Grid.Column="0" 
+                Click="OnHoldMustard">
+            Hold Mustard
+        </Button>
+        <Button Name="AddPattie" 
+                Grid.Row="2" 
+                Grid.Column="1" 
+                Click="OnAddPattie">
+            Add Pattie
+        </Button>
+        <Button Grid.Row="2" 
+                Grid.Column="2" 
+                Click="OnDone" 
+                Background="Green">
+            Done
+        </Button>
+    </Grid>
+</Page>

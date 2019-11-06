@@ -25,7 +25,7 @@ namespace PointOfSale
     /// </summary>
     public partial class FlavorSelection : Page
     {
-        private Sodasaurus soda { get; set; }
+        public Sodasaurus soda { get; set; }
 
         /// <summary>
         /// Default Constructor - Creates a new FlavorSelection Page
@@ -52,7 +52,7 @@ namespace PointOfSale
         private void PickFlavor(SodasaurusFlavor flavor)
         {
             soda.Flavor = flavor;
-            NavigationService.Navigate(new DrinkSelection(soda));
+            NavigationService.GoBack();
         }
 
         /// <summary>

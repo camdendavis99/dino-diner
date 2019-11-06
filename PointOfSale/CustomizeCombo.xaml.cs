@@ -16,6 +16,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using DinoDiner.Menu;
 
 namespace PointOfSale
 {
@@ -24,17 +25,46 @@ namespace PointOfSale
     /// </summary>
     public partial class CustomizeCombo : Page
     {
-        // Text in combo buttons
-        public string Entree { get; set; } = "Select Entree";
-        private string Side { get; set; } = "Select Side";
-        private string Drink { get; set; } = "Select Drink";
+        private CretaceousCombo combo;
 
         /// <summary>
-        /// Constructor - Creates a new CustomizeCombo page
+        /// Default Constructor - Creates a new CustomizeCombo page
         /// </summary>
-        public CustomizeCombo()
+        public CustomizeCombo(Entree entree)
         {
             InitializeComponent();
+            combo = new CretaceousCombo(entree);
+            if (DataContext is Order order)
+            {
+                order.Add(combo.Entree);
+                order.Add(combo.Side);
+                order.Add(combo.Drink);
+            }
+        }
+
+        /// <summary>
+        /// Overflow Constructor - Creates a new CustomizeCombo page
+        /// </summary>
+        public CustomizeCombo(CretaceousCombo combo)
+        {
+            InitializeComponent();
+            this.combo = combo;
+            if (DataContext is Order order)
+            {
+                order.Add(combo.Entree);
+                order.Add(combo.Side);
+                order.Add(combo.Drink);
+            }
+        }
+
+        /// <summary>
+        /// Event handler for Done button; Adds combo to order
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
+        public void OnDone(object sender, RoutedEventArgs args)
+        {
+            NavigationService.Navigate(new MenuCategorySelection());
         }
 
         /// <summary>
@@ -44,7 +74,18 @@ namespace PointOfSale
         /// <param name="args"></param>
         public void SelectEntree(object sender, RoutedEventArgs args)
         {
-            NavigationService.Navigate(new EntreeSelection());
+            if (combo.Entree is Brontowurst bw)
+                NavigationService.Navigate(new CustomizeBrontowurst(bw));
+            else if (combo.Entree is DinoNuggets dn)
+                NavigationService.Navigate(new CustomizeDinoNuggets(dn));
+            else if (combo.Entree is PrehistoricPBJ pbj)
+                NavigationService.Navigate(new CustomizePrehistoricPBJ(pbj));
+            else if (combo.Entree is SteakosaurusBurger sb)
+                NavigationService.Navigate(new CustomizeSteakosaurusBurger(sb));
+            else if (combo.Entree is TRexKingBurger tb)
+                NavigationService.Navigate(new CustomizeTRexKingBurger(tb));
+            else if (combo.Entree is VelociWrap wrap)
+                NavigationService.Navigate(new CustomizeVelociWrap(wrap));
         }
 
         /// <summary>
@@ -65,33 +106,6 @@ namespace PointOfSale
         public void SelectDrink(object sender, RoutedEventArgs args)
         {
             NavigationService.Navigate(new DrinkSelection());
-        }
-
-        /// <summary>
-        /// Sets the selected entree
-        /// </summary>
-        /// <param name="entree">Selected entree</param>
-        public void EntreeSelected(string entree)
-        {
-            Entree = entree;
-        }
-
-        /// <summary>
-        /// Sets the selected side
-        /// </summary>
-        /// <param name="side">Selected side</param>
-        public void SideSelected(string side)
-        {
-            Side = side;
-        }
-
-        /// <summary>
-        /// Sets the selected drink
-        /// </summary>
-        /// <param name="drink">Selected drink</param>
-        public void DrinkSelected(string drink)
-        {
-            Drink = drink;
         }
     }
 }

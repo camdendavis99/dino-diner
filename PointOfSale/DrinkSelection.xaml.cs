@@ -37,6 +37,7 @@ namespace PointOfSale
         public DrinkSelection()
         {
             InitializeComponent();
+            Small.IsChecked = true;
         }
 
         /// <summary>
@@ -48,6 +49,19 @@ namespace PointOfSale
         {
             Drink = drink;
             InitializeComponent();
+
+            switch (drink.Size)
+            {
+                case DinoDiner.Menu.Size.Small:
+                    Small.IsChecked = true;
+                    break;
+                case DinoDiner.Menu.Size.Medium:
+                    Medium.IsChecked = true;
+                    break;
+                default:
+                    Large.IsChecked = true;
+                    break;
+            }
         }
 
         /// <summary>

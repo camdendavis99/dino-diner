@@ -19,7 +19,7 @@
             <Button.Background>
                 <ImageBrush ImageSource="Assets/DinoDiner-16.png"></ImageBrush>
             </Button.Background>
-            Dino-Nuggets Combo
+            Brontowurst Combo
         </Button>
         <Button Click="EntreeSelected" Tag="Dino-Nuggets Combo">
             <Button.Background>

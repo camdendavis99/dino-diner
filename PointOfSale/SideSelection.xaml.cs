@@ -55,17 +55,27 @@ namespace PointOfSale
         }
 
         /// <summary>
+        /// Event handler for Done button; adds side to order
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
+        public void OnDone(object sender, RoutedEventArgs args)
+        {
+            if (DataContext is Order order)
+            {
+                order.Add(Side);
+            }
+            NavigationService.GoBack();
+        }
+
+        /// <summary>
         /// Adds the given side to the order
         /// </summary>
         /// <param name="side">side to be added</param>
         private void SelectSide(Side side)
         {
-            if (DataContext is Order order)
-            {
-                side.Size = Size;
-                order.Add(side);
-                Side = side;
-            }
+            side.Size = Size;
+            Side = side;
         }
 
         /// <summary>

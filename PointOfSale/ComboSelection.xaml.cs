@@ -16,6 +16,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using DinoDiner.Menu;
 
 namespace PointOfSale
 {
@@ -40,10 +41,34 @@ namespace PointOfSale
         public void EntreeSelected(object sender, RoutedEventArgs args)
         {
             Button button = (Button)sender;
-            string entree = (string)button.Tag;
+            string entreeText = (string)button.Tag;
+            Entree entree;
 
-            CustomizeCombo comboScreen = new CustomizeCombo();
-            comboScreen.EntreeSelected(entree);
+            switch (entreeText)
+            {
+                case "Brontowurst Combo":
+                    entree = new Brontowurst();
+                    break;
+                case "Dino-Nuggets Combo":
+                    entree = new DinoNuggets();
+                    break;
+                case "Steakosaurus Burger Combo":
+                    entree = new SteakosaurusBurger();
+                    break;
+                case "T-Rex King Burger Combo":
+                    entree = new TRexKingBurger();
+                    break;
+                case "Pterodactyl Wings Combo":
+                    entree = new PterodactylWings();
+                    break;
+                case "Prehistoric PB&J Combo":
+                    entree = new PrehistoricPBJ();
+                    break;
+                default:
+                    entree = new VelociWrap();
+                    break;
+            }
+            CustomizeCombo comboScreen = new CustomizeCombo(entree);
             NavigationService.Navigate(comboScreen);
         }
     }

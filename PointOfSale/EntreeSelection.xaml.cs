@@ -58,11 +58,9 @@ namespace PointOfSale
             if (DataContext is Order order)
             {
                 order.Add(entree);
-                NavigationService.Navigate(new MenuCategorySelection());
+                NavigationService.GoBack();
             }
         }
-
-        // AddBrontowurst AddDinoNuggets AddSteakosaurusBurger AddTRexKingBurger AddPterodactylWings AddPrehistoricPBJ AddVelociwrap
 
         /// <summary>
         /// Event handler for Brontowurst button;

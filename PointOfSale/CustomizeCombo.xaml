@@ -15,14 +15,19 @@
             <RowDefinition></RowDefinition>
             <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
-        <StackPanel Grid.Row="0">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Row="0" Grid.Column="0">
             <Label>Size:</Label>
             <RadioButton GroupName="Size" Content="Small" />
             <RadioButton GroupName="Size" Content="Medium" />
             <RadioButton GroupName="Size" Content="Large" />
         </StackPanel>
-        <Button Click="SelectEntree" Grid.Row="1">Select Entree</Button>
-        <Button Click="SelectSide" Grid.Row="2">Select Side</Button>
-        <Button Click="SelectDrink" Grid.Row="3">Select Drink</Button>
+        <Button Click="OnDone" Grid.Row="0" Grid.Column="1" Background="Green">Done</Button>
+        <Button Click="SelectEntree" Grid.Row="1" Grid.ColumnSpan="2">Select Entree</Button>
+        <Button Click="SelectSide" Grid.Row="2" Grid.ColumnSpan="2">Select Side</Button>
+        <Button Click="SelectDrink" Grid.Row="3" Grid.ColumnSpan="2">Select Drink</Button>
     </Grid>
 </Page>
