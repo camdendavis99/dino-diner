@@ -3,14 +3,83 @@
 @{
     ViewData["Title"] = "Menu";
 }
+@using DinoDiner.Menu;
 
 <h1>Menu</h1>
-@foreach (CretaceousCombo combo in Menu.AvailableCombos)
+<h2>Combos</h2>
+@foreach (CretaceousCombo combo in Model.Menu.AvailableCombos)
 {
-
+    <div class="menu-item">
+        <strong>@combo.Description</strong>
+        <br/>
+        $@combo.Price
+        <br/>
+        @combo.Calories calories
+        <br/>
+        <ul>
+            Ingredients:
+            @foreach (string ingredient in combo.Ingredients)
+            {
+                <li>@ingredient</li>
+            }
+        </ul>
+    </div>
 }
-    <h2>Combos</h2>
 <h2>Entrees</h2>
+@foreach (Entree entree in Model.Menu.AvailableEntrees)
+{
+    <div class="menu-item">
+        <strong>@entree.Description</strong>
+        <br />
+        $@entree.Price
+        <br />
+        @entree.Calories calories
+        <br />
+        <ul>
+            Ingredients:
+            @foreach (string ingredient in entree.Ingredients)
+            {
+                <li>@ingredient</li>
+            }
+        </ul>
+    </div>
+}
 <h2>Sides</h2>
+@foreach (Side side in Model.Menu.AvailableSides)
+{
+    <div class="menu-item">
+        <strong>@side.Description.Substring(6)</strong>
+        <br />
+        $@side.Price
+        <br />
+        @side.Calories calories
+        <br />
+        <ul>
+            Ingredients:
+            @foreach (string ingredient in side.Ingredients)
+            {
+                <li>@ingredient</li>
+            }
+        </ul>
+    </div>
+}
 <h2>Drinks</h2>
+@foreach (Drink drink in Model.Menu.AvailableDrinks)
+{
+    <div class="menu-item">
+        <strong>@drink.Description.Substring(6)</strong>
+        <br />
+        $@drink.Price
+        <br />
+        @drink.Calories calories
+        <br />
+        <ul>
+            Ingredients:
+            @foreach (string ingredient in drink.Ingredients)
+            {
+                <li>@ingredient</li>
+            }
+        </ul>
+    </div>
+}
 
