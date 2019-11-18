@@ -39,6 +39,26 @@ namespace DinoDiner.Menu
         }
 
         /// <summary>
+        /// Gets the list of all available Combos
+        /// </summary>
+        public List<CretaceousCombo> AvailableCombos
+        {
+            get
+            {
+                return new List<CretaceousCombo>()
+                {
+                    new BrontowurstCombo(),
+                    new DinoNuggetsCombo(),
+                    new PrehistoricPBJCombo(),
+                    new PterodactylWingsCombo(),
+                    new SteakosaurusBurgerCombo(),
+                    new TRexKingBurgerCombo(),
+                    new VelociWrapCombo()
+                };
+            }
+        }
+
+        /// <summary>
         /// Gets the list of all available entrees
         /// </summary>
         public List<Entree> AvailableEntrees
