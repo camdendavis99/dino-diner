@@ -51,6 +51,11 @@ namespace DinoDiner.Menu
         }
 
         /// <summary>
+        /// Gets the menu category of the entree
+        /// </summary>
+        public string Category { get; } = "Drink";
+
+        /// <summary>
         /// Returns the string representation of this menu item
         /// </summary>
         /// <returns>String representation of menu item</returns>

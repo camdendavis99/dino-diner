@@ -104,6 +104,11 @@ namespace DinoDiner.Menu
         }
 
         /// <summary>
+        /// Gets the menu category of the combo
+        /// </summary>
+        public string Category { get; } = "Combo";
+
+        /// <summary>
         /// Returns a string representation of the combo
         /// </summary>
         /// <returns>The string representation of the combo</returns>

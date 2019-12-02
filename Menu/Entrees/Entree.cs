@@ -27,6 +27,11 @@ namespace DinoDiner.Menu
         public abstract List<string> Ingredients { get; }
 
         /// <summary>
+        /// Gets the menu category of the entree
+        /// </summary>
+        public string Category { get; } = "Entree";
+
+        /// <summary>
         /// Returns the string representation of this menu item
         /// </summary>
         /// <returns>String representation of menu item</returns>

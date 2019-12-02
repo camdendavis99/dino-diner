@@ -43,7 +43,12 @@ namespace DinoDiner.Menu
         /// </summary>
         public virtual List<string> Ingredients { get; }
 
-        // <summary>
+        /// <summary>
+        /// Gets the menu category of the drink
+        /// </summary>
+        public string Category { get; } = "Side";
+
+        /// <summary>
         /// Returns the string representation of this menu item
         /// </summary>
         /// <returns>String representation of menu item</returns>

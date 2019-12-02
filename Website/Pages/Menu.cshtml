@@ -6,80 +6,142 @@
 @using DinoDiner.Menu;
 
 <h1>Menu</h1>
-<h2>Combos</h2>
-@foreach (CretaceousCombo combo in Model.Menu.AvailableCombos)
+
+<div class="search">
+    <form method="post">
+        <h3>Search</h3>
+        <input type="text" name="search" id="search" value="@Model.search" />
+        <input type="submit" value="Search" />
+
+        <h4>Menu Category</h4>
+        <div class="checkbox-list">
+            <label>
+                <input type="checkbox" name="category" value="Combo" checked="@Model.menuCategory.Contains("Combo")" />
+                Combo
+            </label>
+            <label>
+                <input type="checkbox" name="category" value="Entree" checked="@Model.menuCategory.Contains("Entree")" />
+                Entree
+            </label>
+            <label>
+                <input type="checkbox" name="category" value="Side" checked="@Model.menuCategory.Contains("Side")" />
+                Side
+            </label>
+            <label>
+                <input type="checkbox" name="category" value="Drink" checked="@Model.menuCategory.Contains("Drink")" />
+                Drink
+            </label>
+        </div>
+
+        <h4>Price</h4>
+        <label>
+            Min
+            <input type="number" min="0" max="10" step="0.1" name="minPrice" value="@Model.minPrice" />
+        </label>
+        <label>
+            Max
+            <input type="number" min="0" max="10" step="0.1" name="maxPrice" value="@Model.maxPrice" />
+        </label>
+
+        <h4>Excluding Ingredients</h4>
+        @foreach (string ingredient in Model.Menu.PossibleIngredients)
+        {
+            <label>
+                <input type="checkbox" name="exclude-ingredient" class="exclude-ingredient" value="excludeIngredient" checked="@Model.excludeIngredient.Contains(ingredient)" />
+                @ingredient
+            </label>
+        }
+    </form>
+</div>
+
+@if (Model.FilteredCombos.Count() > 0)
 {
-    <div class="menu-item">
-        <strong>@combo.Description</strong>
-        <br/>
-        $@combo.Price
-        <br/>
-        @combo.Calories calories
-        <br/>
-        <ul>
-            Ingredients:
-            @foreach (string ingredient in combo.Ingredients)
-            {
-                <li>@ingredient</li>
-            }
-        </ul>
-    </div>
-}
-<h2>Entrees</h2>
-@foreach (Entree entree in Model.Menu.AvailableEntrees)
-{
-    <div class="menu-item">
-        <strong>@entree.Description</strong>
-        <br />
-        $@entree.Price
-        <br />
-        @entree.Calories calories
-        <br />
-        <ul>
-            Ingredients:
-            @foreach (string ingredient in entree.Ingredients)
-            {
-                <li>@ingredient</li>
-            }
-        </ul>
-    </div>
-}
-<h2>Sides</h2>
-@foreach (Side side in Model.Menu.AvailableSides)
-{
-    <div class="menu-item">
-        <strong>@side.Description.Substring(6)</strong>
-        <br />
-        $@side.Price
-        <br />
-        @side.Calories calories
-        <br />
-        <ul>
-            Ingredients:
-            @foreach (string ingredient in side.Ingredients)
-            {
-                <li>@ingredient</li>
-            }
-        </ul>
-    </div>
-}
-<h2>Drinks</h2>
-@foreach (Drink drink in Model.Menu.AvailableDrinks)
-{
-    <div class="menu-item">
-        <strong>@drink.Description.Substring(6)</strong>
-        <br />
-        $@drink.Price
-        <br />
-        @drink.Calories calories
-        <br />
-        <ul>
-            Ingredients:
-            @foreach (string ingredient in drink.Ingredients)
-            {
-                <li>@ingredient</li>
-            }
-        </ul>
-    </div>
+    <h2>Combos</h2>
+    @foreach (CretaceousCombo combo in Model.FilteredCombos)
+    {
+        <div class="menu-item">
+            <strong>@combo.Description</strong>
+            <br />
+            $@combo.Price
+            <br />
+            @combo.Calories calories
+            <br />
+            <ul>
+                Ingredients:
+                @foreach (string ingredient in combo.Ingredients)
+                {
+                    <li>@ingredient</li>
+                }
+            </ul>
+        </div>
+    }
 }
 
+@if (Model.FilteredEntrees.Count() > 0)
+{
+    <h2>Entrees</h2>
+    @foreach (Entree entree in Model.Menu.AvailableEntrees)
+    {
+        <div class="menu-item">
+            <strong>@entree.Description</strong>
+            <br />
+            $@entree.Price
+            <br />
+            @entree.Calories calories
+            <br />
+            <ul>
+                Ingredients:
+                @foreach (string ingredient in entree.Ingredients)
+                {
+                    <li>@ingredient</li>
+                }
+            </ul>
+        </div>
+    }
+}
+
+@if (Model.FilteredSides.Count() > 0)
+{
+    <h2>Sides</h2>
+    @foreach (Side side in Model.Menu.AvailableSides)
+    {
+        <div class="menu-item">
+            <strong>@side.Description.Substring(6)</strong>
+            <br />
+            $@side.Price
+            <br />
+            @side.Calories calories
+            <br />
+            <ul>
+                Ingredients:
+                @foreach (string ingredient in side.Ingredients)
+                {
+                    <li>@ingredient</li>
+                }
+            </ul>
+        </div>
+    }
+}
+
+@if (Model.FilteredDrinks.Count() > 0)
+{
+    <h2>Drinks</h2>
+    @foreach (Drink drink in Model.Menu.AvailableDrinks)
+    {
+        <div class="menu-item">
+            <strong>@drink.Description.Substring(6)</strong>
+            <br />
+            $@drink.Price
+            <br />
+            @drink.Calories calories
+            <br />
+            <ul>
+                Ingredients:
+                @foreach (string ingredient in drink.Ingredients)
+                {
+                    <li>@ingredient</li>
+                }
+            </ul>
+        </div>
+    }
+}

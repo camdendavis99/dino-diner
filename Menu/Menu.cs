@@ -5,11 +5,32 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Linq;
 
 namespace DinoDiner.Menu
 {
     public class Menu
     {
+        /// <summary>
+        /// Gets the list of all possible ingredients
+        /// </summary>
+        public List<string> PossibleIngredients
+        {
+            get
+            {
+                HashSet<string> all = new HashSet<string>();
+                foreach (IMenuItem item in AvailableMenuItems)
+                {
+                    foreach (string ingredient in item.Ingredients)
+                    {
+                        if (!all.Contains(ingredient))
+                            all.Add(ingredient);
+                    }
+                }
+                return all.ToList();
+            }
+        }
+
         /// <summary>
         /// Gets the list of all available menu items
         /// </summary>
