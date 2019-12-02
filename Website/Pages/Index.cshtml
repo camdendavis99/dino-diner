@@ -4,6 +4,43 @@
     ViewData["Title"] = "Home page";
 }
 
+<div class="search">
+    <form method="post">
+        <h3>Search</h3>
+        <input type="submit" name="search" id="search" value="@Model.search" />
+
+        <h4>Menu Category</h4>
+        <div class="checkbox-list">
+            <label>
+                <input type="checkbox" name="category" value="Combo" checked="@Model.menuCategory.Contains("Combo")" />
+                Combo
+            </label>
+            <label>
+                <input type="checkbox" name="category" value="Entree" checked="@Model.menuCategory.Contains("Entree")" />
+                Entree
+            </label>
+            <label>
+                <input type="checkbox" name="category" value="Side" checked="@Model.menuCategory.Contains("Side")" />
+                Side
+            </label>
+            <label>
+                <input type="checkbox" name="category" value="Drink" checked="@Model.menuCategory.Contains("Drink")" />
+                Drink
+            </label>
+        </div>
+
+        <h4>Price</h4>
+        <label>
+            Min
+            <input type="number" min="0" max="10" step="0.1" name="minPrice" value="@Model.minPrice" />
+        </label>
+        <label>
+            Max
+            <input type="number" min="0" max="10" step="0.1" name="maxPrice" value="@Model.maxPrice" />
+        </label>
+    </form>
+</div>
+
 <img src="images/banner.png" width="200" height="200"/>
 <br/>
 <a href="Menu">Menu</a>

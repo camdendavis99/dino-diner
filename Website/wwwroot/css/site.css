@@ -12,3 +12,12 @@ body {
     padding-right: 15px;
 }
 
+form {
+    background-color: lightgray;
+}
+
+.search {
+    position: absolute;
+    right: 0px;
+    width: 400px;
+}
