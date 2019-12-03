@@ -11,16 +11,17 @@ body {
     padding-left: 15px;
     padding-right: 15px;
 }
+    
 
 .search {
     position: absolute;
     right: 0px;
     width: 400px;
 }
-
+    
 .container {
     width: 100vw;
-    display: flex;
+    /*display: flex;*/
     flex-direction: row;
 }
 
@@ -31,3 +32,4 @@ form {
     padding: 10px;
     min-width: 300px;
 }
+ 

@@ -40,6 +40,13 @@ namespace DinoDiner.Menu
             {
                 return new List<IMenuItem>()
                 {
+                    new BrontowurstCombo(),
+                    new DinoNuggetsCombo(),
+                    new PrehistoricPBJCombo(),
+                    new PterodactylWingsCombo(),
+                    new SteakosaurusBurgerCombo(),
+                    new TRexKingBurgerCombo(),
+                    new VelociWrapCombo(),
                     new Brontowurst(),
                     new DinoNuggets(),
                     new PrehistoricPBJ(),

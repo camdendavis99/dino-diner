@@ -1,4 +1,8 @@
-﻿using System.Collections.Generic;
+﻿/*  CretaceousCombo.cs
+*   Author: Camden Davis
+*/
+
+using System.Collections.Generic;
 using System.ComponentModel;
 
 namespace DinoDiner.Menu
@@ -6,7 +10,7 @@ namespace DinoDiner.Menu
     /// <summary>
     /// A class representing a combo meal
     /// </summary>
-    public class CretaceousCombo : INotifyPropertyChanged
+    public class CretaceousCombo : IMenuItem, INotifyPropertyChanged
     {
         /// <summary>
         /// Stores the size
