@@ -3,8 +3,8 @@
 */
 
 using System;
-using System.Collections.Generic;
 using System.Linq;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
@@ -15,14 +15,14 @@ namespace Website.Pages
     public class MenuModel : PageModel
     {
         /// <summary>
-        /// Stores the menu items with the filters applied
-        /// </summary>
-        public List<IMenuItem> FilteredMenu = MenuDatabase.All;
-
-        /// <summary>
         /// Instance of Menu class
         /// </summary>
         public Menu Menu = new Menu();
+
+        /// <summary>
+        /// Stores the menu items with the filters applied
+        /// </summary>
+        public IEnumerable<IMenuItem> FilteredMenu;// = Menu.AvailableMenuItems;
 
         /// <summary>
         /// Search query
@@ -57,77 +57,29 @@ namespace Website.Pages
         /// <summary>
         /// Gets the combos from the filtered menu items
         /// </summary>
-        public List<CretaceousCombo> FilteredCombos
-        {
-            get
-            {
-                List<CretaceousCombo> result = new List<CretaceousCombo>();
-                foreach (IMenuItem item in FilteredMenu)
-                {
-                    if (item.Category.Equals("Combo"))
-                        result.Add((CretaceousCombo)item);
-                }
-                return result;
-            }
-        }
+        public IEnumerable<IMenuItem> FilteredCombos => FilteredMenu.Where(item => item.Category.Equals("Combo"));
 
         /// <summary>
         /// Gets the entrees from the filtered menu items
         /// </summary>
-        public List<Entree> FilteredEntrees
-        {
-            get
-            {
-                List<Entree> result = new List<Entree>();
-                foreach (IMenuItem item in FilteredMenu)
-                {
-                    if (item.Category.Equals("Entree"))
-                        result.Add((Entree)item);
-                }
-                return result;
-            }
-        }
+        public IEnumerable<IMenuItem> FilteredEntrees => FilteredMenu.Where(item => item.Category.Equals("Entree"));
 
         /// <summary>
         /// Gets the sides from the filtered menu items
         /// </summary>
-        public List<Side> FilteredSides
-        {
-            get
-            {
-                List<Side> result = new List<Side>();
-                foreach (IMenuItem item in FilteredMenu)
-                {
-                    if (item.Category.Equals("Side"))
-                        result.Add((Side)item);
-                }
-                return result;
-            }
-        }
+        public IEnumerable<IMenuItem> FilteredSides => FilteredMenu.Where(item => item.Category.Equals("Side"));
 
         /// <summary>
         /// Gets the drinks from the filtered menu items
         /// </summary>
-        public List<Drink> FilteredDrinks
-        {
-            get
-            {
-                List<Drink> result = new List<Drink>();
-                foreach (IMenuItem item in FilteredMenu)
-                {
-                    if (item.Category.Equals("Drink"))
-                        result.Add((Drink)item);
-                }
-                return result;
-            }
-        }
+        public IEnumerable<IMenuItem> FilteredDrinks => FilteredMenu.Where(item => item.Category.Equals("Drink"));
 
         /// <summary>
         /// Handles creation of the Menu page
         /// </summary>
         public void OnGet()
         {
-            FilteredMenu = MenuDatabase.All;
+            FilteredMenu = Menu.AvailableMenuItems;
         }
 
         /// <summary>
@@ -140,26 +92,26 @@ namespace Website.Pages
         /// <param name="excludeIngredient"></param>
         public void OnPost(string search, List<string> menuCategory, float? minPrice, float? maxPrice, List<string> excludeIngredient)
         {
-            FilteredMenu = MenuDatabase.All;
+            FilteredMenu = Menu.AvailableMenuItems;
             if (search != null)
             {
-                FilteredMenu = MenuDatabase.Search(FilteredMenu, search);
+                FilteredMenu = FilteredMenu.Where(item => item.Description != null && item.Description.Contains(search, StringComparison.OrdinalIgnoreCase));
             }
             if (menuCategory.Count > 0)
             {
-                FilteredMenu = MenuDatabase.FilterByMenuCategory(FilteredMenu, menuCategory);
+                FilteredMenu = FilteredMenu.Where(item => menuCategory.Contains(item.Category));
             }
             if (minPrice != null)
             {
-                FilteredMenu = MenuDatabase.FilterByMinPrice(FilteredMenu, (float)minPrice);
+                FilteredMenu = FilteredMenu.Where(item => item.Price >= (float)minPrice);
             }
             if (maxPrice != null)
             {
-                FilteredMenu = MenuDatabase.FilterByMaxPrice(FilteredMenu, (float)maxPrice);
+                FilteredMenu = FilteredMenu.Where(item => item.Price >= (float)maxPrice);
             }
-            if (excludeIngredient.Count > 0)
+            foreach (string ingredient in excludeIngredient)
             {
-                FilteredMenu = MenuDatabase.FilterByIngredients(FilteredMenu, excludeIngredient);
+                FilteredMenu = FilteredMenu.Where(item => !item.Ingredients.Contains(ingredient));
             }
         }
     }
