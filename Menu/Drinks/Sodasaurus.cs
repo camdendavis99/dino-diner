@@ -102,7 +102,7 @@ namespace DinoDiner.Menu
         /// <returns>String representation of the drink</returns>
         public override string ToString()
         {
-            return $"{Size} {Flavor} Sodasaurus";
+            return "Sodasaurus";
         }
 
         /// <summary>

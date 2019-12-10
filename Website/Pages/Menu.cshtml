@@ -61,11 +61,28 @@
     {
         <div class="menu-item">
             <strong>@combo.Description</strong>
-            <br />
-            $@combo.Price
-            <br />
-            @combo.Calories calories
-            <br />
+            <table border="1">
+                <tr>
+                    <th>Size</th>
+                    <th>Price</th>
+                    <th>Calories</th>
+                </tr>
+                <tr>
+                    <td>Small</td>
+                    <td>$@Model.GetComboPrice(combo, Model.Small)</td>
+                    <td>@Model.GetComboCalories(combo, Model.Small)</td>
+                </tr>
+                <tr>
+                    <td>Medium</td>
+                    <td>$@Model.GetComboPrice(combo, Model.Medium)</td>
+                    <td>@Model.GetComboCalories(combo, Model.Medium)</td>
+                </tr>
+                <tr>
+                    <td>Large</td>
+                    <td>$@Model.GetComboPrice(combo, Model.Large)</td>
+                    <td>@Model.GetComboCalories(combo, Model.Large)</td>
+                </tr>
+            </table>
             <ul>
                 Ingredients:
                 @foreach (string ingredient in combo.Ingredients)
@@ -106,11 +123,29 @@
     @foreach (Side side in Model.FilteredSides)
     {
         <div class="menu-item">
-            <strong>@side.Description.Substring(6)</strong>
-            <br />
-            $@side.Price
-            <br />
-            @side.Calories calories
+            <strong>@side.Description</strong>
+            <table border="1">
+                <tr>
+                    <th>Size</th>
+                    <th>Price</th>
+                    <th>Calories</th>
+                </tr>
+                <tr>
+                    <td>Small</td>
+                    <td>$@Model.GetSidePrice(side, Model.Small)</td>
+                    <td>@Model.GetSideCalories(side, Model.Small)</td>
+                </tr>
+                <tr>
+                    <td>Medium</td>
+                    <td>$@Model.GetSidePrice(side, Model.Medium)</td>
+                    <td>@Model.GetSideCalories(side, Model.Medium)</td>
+                </tr>
+                <tr>
+                    <td>Large</td>
+                    <td>$@Model.GetSidePrice(side, Model.Large)</td>
+                    <td>@Model.GetSideCalories(side, Model.Large)</td>
+                </tr>
+            </table>
             Ingredients:
             <ul>
                 @foreach (string ingredient in side.Ingredients)
@@ -128,12 +163,29 @@
     @foreach (Drink drink in Model.FilteredDrinks)
     {
         <div class="menu-item">
-            <strong>@drink.Description.Substring(6)</strong>
-            <br />
-            $@drink.Price
-            <br />
-            @drink.Calories calories
-            <br />
+            <strong>@drink.Description</strong>
+            <table border="1">
+                <tr>
+                    <th>Size</th>
+                    <th>Price</th>
+                    <th>Calories</th>
+                </tr>
+                <tr>
+                    <td>Small</td>
+                    <td>$@Model.GetDrinkPrice(drink, Model.Small)</td>
+                    <td>@Model.GetDrinkCalories(drink, Model.Small)</td>
+                </tr>
+                <tr>
+                    <td>Medium</td>
+                    <td>$@Model.GetDrinkPrice(drink, Model.Medium)</td>
+                    <td>@Model.GetDrinkCalories(drink, Model.Medium)</td>
+                </tr>
+                <tr>
+                    <td>Large</td>
+                    <td>$@Model.GetDrinkPrice(drink, Model.Large)</td>
+                    <td>@Model.GetDrinkCalories(drink, Model.Large)</td>
+                </tr>
+            </table>
             <ul>
                 Ingredients:
                 @foreach (string ingredient in drink.Ingredients)

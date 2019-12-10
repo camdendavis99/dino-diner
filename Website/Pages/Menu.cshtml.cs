@@ -74,6 +74,89 @@ namespace Website.Pages
         /// </summary>
         public IEnumerable<IMenuItem> FilteredDrinks => FilteredMenu.Where(item => item.Category.Equals("Drink"));
 
+        // Allow page to access sizes
+        public Size Small = Size.Small;
+        public Size Medium = Size.Medium;
+        public Size Large = Size.Large;
+
+        /// <summary>
+        /// Gets the price of a combo of the given size
+        /// </summary>
+        /// <param name="item"></param>
+        /// <param name="size"></param>
+        /// <returns></returns>
+        public double GetComboPrice(IMenuItem item, Size size)
+        {
+            CretaceousCombo combo = (CretaceousCombo)item;
+            combo.Size = size;
+            return combo.Price;
+        }
+
+        /// <summary>
+        /// Gets the price of a side of the given size
+        /// </summary>
+        /// <param name="item"></param>
+        /// <param name="size"></param>
+        /// <returns></returns>
+        public double GetSidePrice(IMenuItem item, Size size)
+        {
+            Side side = (Side)item;
+            side.Size = size;
+            return side.Price;
+        }
+
+        /// <summary>
+        /// Gets the price of a drink of the given size
+        /// </summary>
+        /// <param name="item"></param>
+        /// <param name="size"></param>
+        /// <returns></returns>
+        public double GetDrinkPrice(IMenuItem item, Size size)
+        {
+            Drink drink = (Drink)item;
+            drink.Size = size;
+            return drink.Price;
+        }
+
+        /// <summary>
+        /// Gets the calories of a combo of the given size
+        /// </summary>
+        /// <param name="item"></param>
+        /// <param name="size"></param>
+        /// <returns></returns>
+        public uint GetComboCalories(IMenuItem item, Size size)
+        {
+            CretaceousCombo combo = (CretaceousCombo)item;
+            combo.Size = size;
+            return combo.Calories;
+        }
+
+        /// <summary>
+        /// Gets the calories of a side of the given size
+        /// </summary>
+        /// <param name="item"></param>
+        /// <param name="size"></param>
+        /// <returns></returns>
+        public uint GetSideCalories(IMenuItem item, Size size)
+        {
+            Side side = (Side)item;
+            side.Size = size;
+            return side.Calories;
+        }
+
+        /// <summary>
+        /// Gets the calories of a drink of the given size
+        /// </summary>
+        /// <param name="item"></param>
+        /// <param name="size"></param>
+        /// <returns></returns>
+        public uint GetDrinkCalories(IMenuItem item, Size size)
+        {
+            Drink drink = (Drink)item;
+            drink.Size = size;
+            return drink.Calories;
+        }
+
         /// <summary>
         /// Handles creation of the Menu page
         /// </summary>
